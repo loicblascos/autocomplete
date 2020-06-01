@@ -1,0 +1,14 @@
+<h3 id="import">Import</h3>
+<p>You can import polyfills, style and main class from package as follows:</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`import '@loicblascos/autocomplete/lib/polyfills'; // Optional
+import '@loicblascos/autocomplete/lib/style.css'; // Optional
+import AutoComplete from '@loicblascos/autocomplete';`
+	}
+)
+%>

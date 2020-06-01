@@ -1,0 +1,44 @@
+.#{$wrapper} {
+	.#{$clear} {
+		position: absolute;
+		display: flex;
+		appearance: none;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 40px;
+		margin: 0;
+		padding: 0;
+		height: auto;
+		max-height: none;
+		background: none;
+		border: none;
+		box-shadow: none;
+		color: $clearButton;
+		cursor: pointer;
+		outline: none;
+		touch-action: manipulation;
+		transition: color 150ms ease;
+
+		&:focus,
+		&:hover {
+			background: none;
+			border: none;
+			box-shadow: none;
+			color: $clearButton-hover;
+			outline: none;
+		}
+
+		svg {
+			align-self: center;
+			height: 20px;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			fill: currentColor;
+			stroke: currentColor;
+			stroke-width: 0;
+			pointer-events: none;
+		}
+	}
+}

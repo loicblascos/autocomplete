@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="revisit-after" content="7 DAYS">
+		<meta name="robots" content="All">
+		<title>AutoComplete</title>
+		<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2280%22%3E📖%3C/text%3E%3C/svg%3E">
+		<link rel="stylesheet" href="./dist/css/docs.css">
+	</head>
+	<body data-color="basic">
+		<header id="site-header"><%= require( './layout/header.ejs' )() %></header>
+		<nav id="site-nav"><%= require( './layout/menu.ejs' )() %></nav>
+		<main id="site-main">
+			<section><%= require( './layout/banner.ejs' )() %></section>
+			<section><%= require( './started/index.ejs' )() %></section>
+			<section><%= require( './options/index.ejs' )() %></section>
+			<section><%= require( './methods/index.ejs' )() %></section>
+			<section><%= require( './events/index.ejs' )() %></section>
+			<section><%= require( './extras/index.ejs' )() %></section>
+		</main>
+		<footer id="site-footer"><%= require( './layout/footer.ejs' )() %></footer>
+		<script src="./dist/js/docs.js"></script>
+	</body>
+</html>

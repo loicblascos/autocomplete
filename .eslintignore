@@ -1,0 +1,7 @@
+# Dependency directory
+node_modules
+# Conf file
+.eslintrc.js
+# Build dist
+dist
+lib

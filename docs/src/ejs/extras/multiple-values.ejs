@@ -1,0 +1,34 @@
+<h3 id="multiple-values">Multiple values</h3>
+<p><code>source</code> option allows to control the searched suggestions from the input value. So, if we split the <code>value</code> argument passed in <code>source</code> function and pass it to <code>response()</code> method, it will automatically make a new search from last splitted value.</p>
+<p>In this example, we use internal method <code>response( value, suggestions )</code>, that accepts as first argument the searched <code>value</code> and as second argument the <code>suggestions</code> in which to search.</p>
+<p>In <code>source</code> function (and all events), instance context is binded (<code>this</code>). So, you should not use arrow function if you want to keep instance context.</p>
+
+<%= require('../components/input.ejs')( { id: 'multi-example', label: 'Example', placeholder: 'Enter a country name' } ) %>
+
+<%=
+require( '../components/code.ejs' )(
+    {
+        language: 'js',
+        content:
+`new AutoComplete(
+	input,
+	{
+		source: function( value ) {
+
+			this.values = value.trim().split( /\s*,\s*/ );
+			// We use internal method instead of source callback.
+			this.response( this.values.pop(), source );
+
+		},
+		onSelect: function( { label } ) {
+
+			this.values.push( label );
+			input.value = &#96;&#36;{ this.values.filter( Boolean ).join( ', ' ) }, &#96;;
+
+		},
+	}
+);`
+    }
+)
+%>
+

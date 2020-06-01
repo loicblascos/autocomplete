@@ -1,0 +1,24 @@
+.#{$menu} {
+	.#{$list} {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.#{$list} .#{$item} {
+	position: relative;
+	margin: 0;
+	padding: 10px 11px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 16px;
+	list-style-type: none;
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	&[aria-selected=true] {
+		background-color: $focusedItem;
+	}
+}

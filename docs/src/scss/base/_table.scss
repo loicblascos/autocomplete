@@ -1,0 +1,68 @@
+.table {
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	overflow-x: auto;
+	margin-bottom: 1em;
+	margin-left: -1px;
+	margin-right: -1px;
+	border-radius: 1em;
+	border-spacing: 0;
+	border: 1px solid white;
+	background:
+		linear-gradient(to right, white 20%, rgba(255, 255, 255, 0.5)),
+		linear-gradient(to right, rgba(0, 0, 0, 0), white 80%) 0 100%,
+		linear-gradient(to right, black, rgba(0, 0, 0, 0) 10%),
+		linear-gradient(to left, black, rgba(0, 0, 0, 0) 10%);
+	background-attachment: local, local, scroll, scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	min-width: 600px;
+	width: 100%;
+	word-break: normal;
+}
+
+th {
+	color: $title-color;
+	padding: 1em;
+	font-weight: 500;
+	line-height: 1.5em;
+	text-align: left;
+	white-space: pre;
+	border-bottom: 2px solid $border-color;
+}
+
+td {
+	color: rgba(0, 0, 0, 0.87);
+	padding: 0.75em 1em;
+	font-size: 0.9em;
+	font-weight: 400;
+	line-height: 1.43;
+	border-bottom: 1px solid $border-color;
+	letter-spacing: 0.01071em;
+
+	a {
+		color: inherit;
+
+		&:hover,
+		&:focus {
+			color: $accent-color;
+		}
+	}
+}
+
+.prop-name {
+	color: $accent-color;
+	font-weight: 500;
+}
+
+.prop-type {
+	color: $red-color;
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+	letter-spacing: -0.05em;
+	text-align: center;
+}

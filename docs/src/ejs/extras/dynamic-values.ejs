@@ -1,0 +1,35 @@
+<h3 id="dynamic-values">Dynamic values</h3>
+<p>In this example, the <code>source</code> is dynamic and it passes in <code>response</code> callback suggestion based on user input (<code>value</code>). We also render the suggestion as shown in <code>renderItem</code> (<a href="#renderItem">@see example</a>)</p>
+
+<%= require('../components/input.ejs')( { id: 'dynamic-example', label: 'Example', placeholder: 'Enter an hex color' } ) %>
+
+<%=
+require( '../components/code.ejs' )(
+    {
+        language: 'js',
+        content:
+`const colorSwatch = document.createElement( 'span' );
+
+new AutoComplete(
+	input,
+	{
+		source: ( value, response ) => {
+
+			const isHex = /^#([0-9A-F]{3}){1,2}$/i.test( value );
+			response( isHex ? [ value ] : [] );
+
+		},
+		renderItem: ( suggestion, item ) => {
+
+			item.style.setProperty( '--color', suggestion.value );
+			item.append( colorSwatch.cloneNode() );
+
+			return suggestion.content;
+
+		},
+	}
+);`
+    }
+)
+%>
+

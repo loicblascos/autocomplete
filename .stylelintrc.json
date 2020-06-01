@@ -1,0 +1,32 @@
+{
+	"extends": "stylelint-config-standard",
+	"rules": {
+		"indentation": "tab",
+		"at-rule-no-unknown": null,
+		"comment-empty-line-before": null,
+		"declaration-property-unit-whitelist": null,
+		"font-weight-notation": null,
+		"max-line-length": null,
+		"no-descending-specificity": null,
+		"no-duplicate-selectors": null,
+		"selector-class-pattern": null,
+		"value-keyword-case": null,
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"except": [ "blockless-after-blockless" ],
+				"ignore": [ "after-comment" ],
+				"ignoreAtRules": [ "else" ]
+			}
+		],
+
+		"block-opening-brace-space-before": "always",
+		"block-closing-brace-newline-after": [
+			"always",
+			{
+				"ignoreAtRules": [ "if", "else" ]
+			}
+		],
+		"at-rule-name-space-after": "always"
+	}
+}

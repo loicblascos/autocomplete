@@ -1,0 +1,26 @@
+<h3 id="sortResults">sortResults</h3>
+<p>By default, suggestions are sorted by relevance. It means that suggestions are firstly ordered by matched string position, then alphabetically and by suggestion length. If you do not want to sort results you can simply set this option to <code>false</code>.</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`new AutoComplete(
+	input,
+	{
+		source: [ /* ... */ ],
+		// Default function used to sort.
+		sortResults: ( a, b ) => {
+
+			return (
+				a.index - b.index ||                // Sort by matched index.
+				a.label.localeCompare( b.label ) || // Then, sort alphabetically.
+				a.label.length - b.label.length     // Then, sort by string length.
+			);
+		}
+	}
+);`
+	}
+)
+%>

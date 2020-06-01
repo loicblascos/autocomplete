@@ -1,0 +1,27 @@
+<h3 id="events-logger">Events Logger</h3>
+
+<%= require('../components/input.ejs')( { id: 'events-example', label: 'Example', placeholder: 'Type to see events log', logger: true } ) %>
+
+<%=
+require( '../components/code.ejs' )(
+    {
+        language: 'js',
+        content:
+`new AutoComplete(
+	input,
+	{
+		source: [ /* ... */ ],
+		onOpen: () => console.log( 'menu opened' ),
+		onClose: () => console.log( 'menu closed' ),
+		onResize: () => console.log( 'menu resized' ),
+		onSearch: value => console.log( &#96;search for "&#36;{ value }"&#96; ),
+		onAbort: () => console.log( 'search aborted' ),
+		onClear: () => console.log( 'input cleared' ),
+		onSelect: item => console.log( &#96;"&#36;{ item.label }" selected&#96; ),
+		onHighlight: item => console.log( &#96;"&#36;{ item.label }" highlighted&#96; ),
+	}
+);`
+    }
+)
+%>
+

@@ -1,0 +1,34 @@
+<h3 id="menuTarget">menuTarget</h3>
+<p>By default, the menu is appended in <code>document.body</code> element. But, it may conflict with your layout, so you can set the element in which you want to append the menu thanks to this option. By changing the menu target and by playing on menu style it's even possible to inline it in the document.</p>
+
+<%= require('../components/input.ejs')( { id: 'menutarget-example', label: 'Example', placeholder: 'Focus input to inline menu' } ) %>
+<div class="menu-target"></div>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`const menuTarget = document.querySelector( '.menu-target' );
+
+new AutoComplete(
+	input,
+	{
+		source: [ /* ... */ ],
+		menuTarget,
+		minLength: 0,
+		maxResults: 5,
+		autoSearch: true,
+		onResize: ( { style } ) => {
+
+			style.position = 'relative';
+			style.zIndex = 0;
+			style.left = 0;
+			style.top = 0;
+
+		},
+	}
+);`
+	}
+)
+%>

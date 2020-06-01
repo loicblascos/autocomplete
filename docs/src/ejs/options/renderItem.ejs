@@ -1,0 +1,71 @@
+<h3 id="renderItem">renderItem</h3>
+<p>By default, suggestions output string in list item and cannot output HTML for performance and security reasons (XSS vulnerability from remote source for example). However, you can control the rendered content in each list item thanks to this option.</p>
+<p><code>renderItem</code> option accepts a function with as arguments the suggestion (from source) and the item element from the list. The function should return an HTMLelement or string to append in the list item. By returning <code>null</code> it will skip the item from the list.</p>
+
+<%= require('../components/input.ejs')( { id: 'renderitem-example', label: 'Example', placeholder: 'Enter a color name' } ) %>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`const colorSwatch = document.createElement( 'span' );
+
+new AutoComplete(
+	input,
+	{
+		source: [
+			{ label: '#f0f8ff - aliceblue', value: '#f0f8ff' },
+			{ label: '#faebd7 - antiquewhite', value: '#faebd7' },
+			{ label: '#00ffff - aqua', value: '#00ffff' },
+			{ label: '#7fffd4 - aquamarine', value: '#7fffd4' },
+			{ label: '#f0ffff - azure', value: '#f0ffff' },
+			{ label: '#f5f5dc - beige', value: '#f5f5dc' },
+			{ label: '#ffe4c4 - bisque', value: '#ffe4c4' },
+			{ label: '#000000 - black', value: '#000000' },
+			/* ... */
+		],
+		maxResults: 50,
+		renderItem: ( suggestion, item ) => {
+
+			// We append color swatch directly in list item.
+			item.append( colorSwatch.cloneNode() );
+			// We set css variable on list item.
+			item.style.setProperty( '--color', suggestion.value );
+
+
+			// We return the highlighted suggestion content to append in item.
+			// Content is a documentFragment because highlight option is enabled.
+			// Otherwise it'll be a string and it'll erase our appended element.
+			return suggestion.content;
+
+		}
+	}
+);`
+	}
+)
+%>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'css',
+		content:
+`.acplt-list .acplt-item[style^="--color"] {
+	display: flex;
+	color: black;
+	font-family: monospace;
+	white-space: pre;
+}
+
+.acplt-list .acplt-item[style^="--color"] span {
+	width: 1rem;
+	height: 1rem;
+	margin-right: 0.5rem;
+	background-color: var(--color);
+	border-radius: 100%;
+	box-shadow: 0 0 0 1px #e6ecf1;
+}`
+	}
+)
+%>

@@ -1,0 +1,34 @@
+<h3 id="filterResults">filterResults</h3>
+<p>By default, results from suggestions are filtered by the label. You can use this option to add extra logic to match searched value in suggestions.</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`const menuTarget = document.querySelector( '.menu-target' );
+
+new AutoComplete(
+	input,
+	{
+		source: [ /* ... */ ],
+		/**
+		 * Filter by suggestion label and value
+		 *
+		 * @param {boolean} exists - Whether label matches value.
+		 * @param {object} suggestion - label and value.
+		 * @param {string} value - Searched value.
+		 * @param {boolean} Return true to keep the suggestion, false otherwise.
+		 */
+		filterResults: function( exists, suggestion, value ) {
+
+			// We normalize suggestion value (to remove diacritics, to trim, and to lower case)
+			// And use regular expression generated from searched value.
+			return exists || !! this.normalize( suggestion.value ).match( this.regExp );
+
+		}
+	}
+);`
+	}
+)
+%>

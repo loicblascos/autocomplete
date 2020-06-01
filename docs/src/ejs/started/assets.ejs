@@ -1,0 +1,13 @@
+<h3 id="assets">Assets</h3>
+<p>If you do not use import, you need to include AutoComplete assets in the document:</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'markup',
+		content:
+`&lt;link rel="stylesheet" href="autocomplete.css"&gt;
+&lt;script src="autocomplete.js" async>&lt;/script&gt;`
+	}
+)
+%>

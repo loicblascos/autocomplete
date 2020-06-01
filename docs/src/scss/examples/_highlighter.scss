@@ -1,0 +1,16 @@
+.acplt-item .highlighter {
+	background-color: #85ffff;
+
+	&::before,
+	&::after {
+		content: "·";
+		background-color: white;
+	}
+}
+
+.acplt-item[aria-selected=true] .highlighter {
+	&::before,
+	&::after {
+		background-color: #e9f2ff;
+	}
+}

@@ -1,0 +1,253 @@
+$foreground: #eff;
+$background: #183055;
+$comments: #9daab6;
+$red: #ff5370;
+$orange: #f78c6c;
+$yellow: #ffcb6b;
+$green: #c3e88d;
+$cyan: #89ddff;
+$blue: #82aaff;
+$paleblue: #b2ccd6;
+$purple: #c792ea;
+$brown: #c17e70;
+$pink: #f07178;
+$violet: #bb80b3;
+
+.code-wrapper {
+	position: relative;
+}
+
+.copy-btn {
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	width: 20px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	color: #9daab6;
+	background: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: none;
+	appearance: none;
+	touch-action: manipulation;
+	transition: color 0.25s ease;
+
+	&:focus,
+	&:hover {
+		color: white;
+	}
+
+	span {
+		position: absolute;
+		top: 0;
+		right: 2em;
+		height: 100%;
+		line-height: 20px;
+		font-size: 14px;
+		font-weight: 600;
+		opacity: 0.1;
+		transform: translateX(1em);
+		transition: transform 0.25s ease, opacity 0.25s ease;
+
+		&:not(.sr-only) {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: $foreground;
+	background: none;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	border: none;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre {
+	color: $comments;
+	background: $background;
+}
+
+pre[class*='language-'] {
+	padding: 2em;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background: $background;
+}
+
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	white-space: normal;
+}
+
+code[class*='language-'] {
+	padding: 0.1em 0.1em 0.1em 0;
+}
+
+.token {
+	&.script.language-javascript {
+		color: $foreground;
+	}
+
+	&.comment,
+	&.block-comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: $comments;
+	}
+
+	&.attr-name {
+		color: $purple;
+	}
+
+	&.namespace,
+	&.deleted {
+		color: $violet;
+	}
+
+	&.function,
+	&.function-name {
+		color: $blue;
+	}
+
+	&.unit,
+	&.url,
+	&.boolean,
+	&.number {
+		color: $orange;
+	}
+
+	&.color,
+	&.hexcode,
+	&.builtin,
+	&.property,
+	&.class,
+	&.class-name,
+	&.constant,
+	&.symbol {
+		color: $yellow;
+	}
+
+	&.id,
+	&.selector,
+	&.important,
+	&.atrule,
+	&.keyword {
+		color: $purple;
+	}
+
+	&.pseudo-class,
+	&.pseudo-element,
+	&.inserted,
+	&.attribute,
+	&.string,
+	&.char,
+	&.attr-value,
+	&.regex,
+	&.variable {
+		color: $green;
+	}
+
+	&.punctuation,
+	&.operator,
+	&.entity,
+	&.url {
+		color: $cyan;
+	}
+
+	&.tag {
+		color: $pink;
+	}
+
+	&.parameter,
+	&.deleted {
+		color: $red;
+	}
+
+	&.important,
+	&.bold {
+		font-weight: bold;
+	}
+
+	&.italic {
+		font-style: italic;
+	}
+
+	&.entity {
+		cursor: help;
+	}
+}
+
+code.language-css {
+	color: $orange;
+
+	.token {
+		&.selector {
+			color: $yellow;
+		}
+
+		&.property {
+			color: $foreground;
+		}
+	}
+}
+
+pre[class*="language-"].line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+	position: relative;
+	white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+	content: counter(linenumber);
+	color: rgba($comments, 0.5);
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
+}

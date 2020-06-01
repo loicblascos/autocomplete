@@ -1,0 +1,20 @@
+<h3 id="markup">Markup</h3>
+<p>AutoComplete script works with search and text input elements. <a href="https://www.w3.org/WAI/tutorials/forms/labels/">Explicit and Implicit input labels</a> are supported by AutoComplete script to be fully accessible.</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'markup',
+		content:
+`&lt;!-- Explicit label --&gt;
+&lt;label for="my-input"&gt;Input Label&lt;/label&gt;
+&lt;input type="text" id="my-input" placeholder="type to search"&gt;
+
+&lt;!-- Implicit label --&gt;
+&lt;label&gt;
+	Input Label
+	&lt;input type="text" id="my-input" placeholder="type to search"&gt;
+&lt;/label&gt;`
+	}
+)
+%>

@@ -1,0 +1,26 @@
+<h3 id="classes">classes</h3>
+<p>Because conflicts may happen with class names or simply because you need to use others, you can replace all classes used by the script thanks to this options:</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`new AutoComplete(
+	input,
+	{
+		// Default classes.
+		classes: {
+			wrapper: 'acplt',
+			menu: 'acplt-menu',
+			list: 'acplt-list',
+			item: 'acplt-item',
+			clear: 'acplt-clear',
+			loader: 'acplt-loader',
+			message: 'acplt-message',
+		},
+	}
+);`
+	}
+)
+%>

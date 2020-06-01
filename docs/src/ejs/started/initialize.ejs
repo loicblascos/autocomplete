@@ -1,0 +1,25 @@
+<h3 id="initialize">Initialize</h3>
+<p>The <code>AutoComplete()</code> constructor accepts two arguments: the input element and an options object.</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`const input = document.querySelector( '#my-input' );
+const acplt = new AutoComplete(
+	input,
+	{
+		source: [
+			{ label: 'label 1', value: 'value 1' },
+			{ label: 'label 2', value: 'value 2' },
+			{ label: 'label 3', value: 'value 3' },
+		],
+		minLength: 1,
+		maxResults: 50,
+		autoSearch: true,
+	}
+);`
+	}
+)
+%>

@@ -1,0 +1,20 @@
+#site-footer p {
+	display: flex;
+	border-top: 2px solid $border-color;
+	margin: 0 5em;
+	align-items: center;
+	height: calc(100% - 2px);
+	max-width: calc(930px - 10em);
+}
+
+@media (max-width: #{$sidebar-width + $content-width}) {
+	#site-footer p {
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: #{$content-width - 10*16 + 3*16}) {
+	#site-footer p {
+		margin: 0 1.5rem;
+	}
+}

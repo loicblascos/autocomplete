@@ -1,0 +1,43 @@
+html {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	background-color: white;
+	scroll-behavior: smooth;
+	scroll-padding-top: calc(#{$header-height} + 3rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+body {
+	min-height: 100vh;
+	height: 100%;
+	margin: 0;
+}
+
+section {
+	margin: 3rem 5rem;
+	max-width: calc(#{$content-width} - 10em);
+
+	&:first-child {
+		h2:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+@media (max-width: #{$sidebar-width + $content-width}) {
+	section {
+		margin: 3rem auto;
+	}
+}
+
+@media (max-width: #{$content-width - 10*16 + 3*16}) {
+	section {
+		margin: 3rem 1.5rem;
+	}
+}

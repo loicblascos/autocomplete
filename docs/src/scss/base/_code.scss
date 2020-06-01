@@ -1,0 +1,21 @@
+code {
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+	background-color: $menu-color;
+	padding: 3px 6px;
+	border-radius: 3px;
+	font-size: 15px;
+	line-height: 1.5;
+	border: 1px solid $border-color;
+	white-space: pre-wrap;
+}
+
+pre {
+	overflow: auto;
+	margin: 0.5em 0;
+	padding: 2em 2em 2em 3.8em;
+	border-radius: 0.3em;
+	font-size: 16px;
+	line-height: 1;
+	text-align: left;
+	white-space: pre;
+}

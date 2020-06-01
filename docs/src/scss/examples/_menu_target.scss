@@ -1,0 +1,13 @@
+label[for=menutarget-example] ~ .input-wrapper,
+label[for=select-highlight-example] ~ .input-wrapper {
+	margin-bottom: 0.5rem;
+}
+
+.menu-target {
+	display: flex;
+	margin-bottom: 0.5rem;
+
+	> div {
+		margin-top: 0;
+	}
+}

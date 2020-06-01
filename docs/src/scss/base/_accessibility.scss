@@ -1,0 +1,28 @@
+.sr-only {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal;
+}
+
+.skip-link:focus {
+	display: block;
+	z-index: 100000;
+	left: 0.85rem;
+	top: 0.85rem;
+	width: auto;
+	height: auto;
+	padding: 1rem;
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid $accent-color;
+	color: $title-color;
+	clip: auto;
+	-webkit-clip-path: none;
+	clip-path: none;
+	line-height: normal;
+	text-decoration: none;
+	outline: none;
+}

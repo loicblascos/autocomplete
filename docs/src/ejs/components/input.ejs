@@ -1,0 +1,32 @@
+<% buttons = typeof buttons === 'object' && buttons %>
+<% logger = typeof logger === 'boolean' && logger %>
+<% value = typeof value === 'string' && value ? value : '' %>
+<% placeholder = typeof placeholder === 'string' && placeholder ? placeholder : 'Type to search' %>
+
+<% if ( buttons ) { %>
+	<div class="field-wrapper">
+<% } %>
+
+<label for="<%= id %>" class="input-label"><span aria-hidden="true">👇</span> <%= label %></label>
+
+<% if ( logger ) { %>
+	<%= require('./logger.ejs')() %>
+<% } %>
+
+
+<% if ( buttons ) { %>
+	<div class="button-group">
+	<% for ( const name in buttons ) { %>
+		<button type="button" id="<%= name %>-btn"><%= buttons[ name ] %></button>
+	<% } %>
+	</div>
+<% } %>
+
+<div class="input-wrapper">
+	<input type="text" id="<%= id %>" <%= value ? ` value="${ value }"` : '' %> placeholder="<%= placeholder %>">
+	<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg>
+</div>
+
+<% if ( buttons ) { %>
+	</div>
+<% } %>

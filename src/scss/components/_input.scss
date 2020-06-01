@@ -1,0 +1,15 @@
+.#{$wrapper} {
+	position: relative;
+	display: flex;
+	box-sizing: border-box;
+
+	input {
+		display: block;
+		width: 100%;
+		margin: 0;
+	}
+
+	input::-ms-clear {
+		display: none;
+	}
+}

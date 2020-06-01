@@ -1,0 +1,18 @@
+$input-color      :rgb(204, 204, 204);
+$red-color        : #f85464;
+$body-color       : #3b454e;
+$title-color      : #242a31;
+$accent-color     : #0069ff;
+$border-color     : #e6ecf1;
+$menu-color       : #f5f7f9;
+$overlay-color    : rgba(24, 48, 85, 0.3);
+$placeholder-color: rgb(153, 153, 153);
+
+$content-width: 930px;
+$sidebar-width: 320px;
+$header-height: 80px;
+$footer-height: 80px;
+
+:root {
+	--menu-match-media: #{$sidebar-width + $content-width};
+}

@@ -1,0 +1,30 @@
+<h3 id="source">source</h3>
+<p>AutoComplete <code>source</code> option accepts an array of strings, an array of objects. When using array of objects, <code>label</code> is used in suggestion and <code>value</code> set as input value on selection.</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`// Array of strings example.
+new AutoComplete(
+	input,
+	{
+		source: [ 'value 1', 'value 2', 'value 3' ],
+	}
+);
+
+// Array of objects example.
+new AutoComplete(
+	input,
+	{
+		source: [
+			{ label: 'label 1', value: 'value 1' },
+			{ label: 'label 2', value: 'value 2' },
+			{ label: 'label 3', value: 'value 3' },
+		],
+	}
+);`
+	}
+)
+%>

@@ -1,0 +1,21 @@
+<h3 id="destroy">destroy()</h3>
+<p>Remove AutoComplete functionality and instance attached to the input. <code>destroy()</code> will return the element back to its pre-initialized state.</p>
+
+<%= require('../components/input.ejs')( { id: 'destroy-example', label: 'Example', value: 'France', placeholder: 'Enter a country name', buttons: { init: 'Initialize', destroy: 'Destroy' } } ) %>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`const init = document.querySelector( '#init-btn' );
+const destroy = document.querySelector( '#destroy-btn' );
+const instantiate = () => instance = new AutoComplete( input, { source: [ /* ... */ ] } );
+let instance;
+
+instantiate();
+init.addEventListener( 'click', instantiate );
+destroy.addEventListener( 'click', () => instance && instance.destroy() );`
+	}
+)
+%>

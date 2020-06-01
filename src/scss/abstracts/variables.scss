@@ -1,0 +1,14 @@
+$prefix  : 'acplt';
+$wrapper : $prefix;
+$list    : '#{$prefix}-list';
+$menu    : '#{$prefix}-menu';
+$item    : '#{$prefix}-item';
+$clear   : '#{$prefix}-clear';
+$loader  : '#{$prefix}-loader';
+$message : '#{$prefix}-message';
+$keyframe: '#{$prefix}-loading';
+
+$focusedItem:rgba(38, 132, 255, 0.1);
+$clearButton: rgb(204, 204, 204);
+$clearButton-hover:rgb(179, 179, 179);
+$loaderDots: darken($clearButton-hover, 30);

@@ -1,0 +1,22 @@
+<h3 id="open-close">open() / close()</h3>
+<p><code>open</code> method allows to open suggestions from last search if it exists. In this example, we populate the list of suggestion from empty searched string to simulate a search history.</p>
+
+<%= require('../components/input.ejs')( { id: 'open-close-example', placeholder: 'Enter a country name', label: 'Example', buttons: { open: 'Open', close: 'Close' } } ) %>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`const open = document.querySelector( '#open-btn' );
+const close = document.querySelector( '#close-btn' );
+const instance = new AutoComplete( input, { source: [ /* ... */ ] } );
+
+// We populate the list of suggestions for demo purpose.
+instance.populate( '', instance.options.source );
+
+open.addEventListener( 'click', () => instance.open() );
+close.addEventListener( 'click', () => instance.close() );`
+	}
+)
+%>

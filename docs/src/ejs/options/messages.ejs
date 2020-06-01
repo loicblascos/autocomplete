@@ -1,0 +1,25 @@
+<h3 id="messages">messages</h3>
+<p>AutoComplete script is accessible and follows <a href="https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html">W3 ARIA practices</a>. It appends messages on user interactions that can be announced by assistive technologies. You can easily localize these messages thanks to this option:</p>
+
+<%=
+require( '../components/code.ejs' )(
+	{
+		language: 'js',
+		content:
+`new AutoComplete(
+	input,
+	{
+		// Default messages.
+		messages: {
+			open: 'Use Up and Down to choose suggestions and press Enter to select suggestion.',
+			input: 'Type to search or press Escape to clear the input.',
+			clear: 'Field cleared.',
+			select: '%s suggestion was selected.',
+			noResults: 'No suggestions found.',
+			loading: 'Loading suggestions...',
+		},
+	}
+);`
+	}
+)
+%>

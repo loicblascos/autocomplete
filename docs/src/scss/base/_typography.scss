@@ -1,0 +1,52 @@
+body {
+	color: $body-color;
+	font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 400;
+	line-height: 1.625;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	display: flex;
+	margin: 2em 0 0.5em;
+	color: $title-color;
+	font-weight: 500;
+}
+
+h1 {
+	margin: 0;
+	font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+	font-size: 1.875em;
+	font-weight: bold;
+}
+
+h2 {
+	margin: 2em 0 1em 0;
+	padding-bottom: 0.85em;
+	border-bottom: 2px solid $border-color;
+	font-size: 1.875em;
+}
+
+h3 {
+	font-size: 1.675em;
+}
+
+h4 {
+	font-size: 1.5em;
+}
+
+h5 {
+	font-size: 1.325em;
+}
+
+h6 {
+	font-size: 1.125em;
+}
+
+mark {
+	font-weight: bold;
+}

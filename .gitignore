@@ -1,0 +1,8 @@
+# Dependency directory
+/node_modules/
+lib/
+# Map files
+*.css.map
+*.js.map
+# npm tarball
+*.tgz

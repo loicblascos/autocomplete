@@ -1,0 +1,128 @@
+<div class="table">
+	<table>
+		<thead>
+			<tr>
+				<th>Property</th>
+				<th>Type</th>
+				<th>Default</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><span class="prop-name">source</span></td>
+				<td><span class="prop-type">{Object[]|fn}</span></td>
+				<td><code class="prop-default">[]</code></td>
+				<td>Holds list of suggestions to search for.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">minLength</span></td>
+				<td><span class="prop-type">{number}</span></td>
+				<td><code class="prop-default">1</code></td>
+				<td>Minimum number of characters to trigger a search.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">maxResults</span></td>
+				<td><span class="prop-type">{number}</span></td>
+				<td><code class="prop-default">-1</code></td>
+				<td>Maximum number of suggestions to display in the list.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">regExp</span></td>
+				<td><span class="prop-type">{string}</span></td>
+				<td><code class="prop-default">($1)</code></td>
+				<td>Expression used to match string(s) in suggestion.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">filterResults</span></td>
+				<td><span class="prop-type">{function}</span></td>
+				<td><span class="prop-default"><a href="#filterResults">@see doc</a></span></td>
+				<td>Function used to filter suggestions in the list.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">sortResults</span></td>
+				<td><span class="prop-type">{function}</span></td>
+				<td><span class="prop-default"><a href="#sortResults">@see doc</a></span></td>
+				<td>Function used to sort suggestions in the list.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">renderItem</span></td>
+				<td><span class="prop-type">{function}</span></td>
+				<td><span class="prop-default"><a href="#renderItem">@see doc</a></span></td>
+				<td>Function used to render suggestion in list item.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">highlighter</span></td>
+				<td><span class="prop-type">{HTMLElement}</span></td>
+				<td><span class="prop-default"><a href="#highlighter">@see doc</a></span></td>
+				<td>Element used to append matched string(s).</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">menuTarget</span></td>
+				<td><span class="prop-type">{HTMLElement}</span></td>
+				<td><span class="prop-default"><a href="#menuTarget">@see doc</a></span></td>
+				<td>Element used to append autocomplete menu.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">smartAccent</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">false</code></td>
+				<td>Only match accents from searched string.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">matchAll</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">false</code></td>
+				<td>Highlight all matches string in suggestion.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">autoFocus</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">true</code></td>
+				<td>Automatically focus first suggestion in the list.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">autoSearch</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">false</code></td>
+				<td>Automatically searches for suggestions on focus.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">autoComplete</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">false</code></td>
+				<td>Inline auto complete first suggestion while typing.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">loader</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">false</code></td>
+				<td>Display a loader while searching in source (async).</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">clearable</span></td>
+				<td><span class="prop-type">{boolean}</span></td>
+				<td><code class="prop-default">true</code></td>
+				<td>Display a button with cross icon to clear the field.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">clearLabel</span></td>
+				<td><span class="prop-type">{string}</span></td>
+				<td><code class="prop-default">Clear field</code></td>
+				<td>Accessible button label used in clear button.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">classes</span></td>
+				<td><span class="prop-type">{Object}</span></td>
+				<td><span class="prop-default"><a href="#classes">@see doc</a></span></td>
+				<td>Class names used in AutoComplete elements.</td>
+			</tr>
+			<tr>
+				<td><span class="prop-name">messages</span></td>
+				<td><span class="prop-type">{Object}</span></td>
+				<td><span class="prop-default"><a href="#messages">@see doc</a></span></td>
+				<td>Accessible texts appended during user interactions.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

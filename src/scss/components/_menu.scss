@@ -1,0 +1,17 @@
+.#{$menu} {
+	position: absolute;
+	box-sizing: border-box;
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	z-index: 1000;
+	top: -1000px; // To prevent vertical overflow (on append before to be sized).
+	width: 0; // To prevent horizontal overflow (on append before to be sized).
+	margin: 8px 0;
+	max-height: 288px;
+	background: white;
+	border-radius: 4px;
+	box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 11px hsla(0, 0%, 0%, 0.1);
+	touch-action: manipulation;
+	user-select: none;
+}

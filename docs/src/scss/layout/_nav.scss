@@ -1,0 +1,28 @@
+#site-nav {
+	align-items: stretch;
+	min-height: calc(100vh);
+	min-width: $sidebar-width;
+	background: $menu-color;
+	border-right: 1px solid $border-color;
+}
+
+@media (max-width: #{$sidebar-width + $content-width}) {
+	#site-nav {
+		position: fixed;
+		z-index: 1;
+		top: #{$header-height + 1};
+		bottom: 0;
+		min-width: unset;
+		padding-top: 0;
+		border: none;
+		box-shadow: rgba(0, 0, 0, 0.14) 0 0 4px, rgba(0, 0, 0, 0.28) 0 4px 8px;
+		visibility: hidden;
+		transition: transform 250ms ease, visibility 250ms ease;
+		transform: translateX(-100%);
+
+		&.opened {
+			visibility: visible;
+			transform: translateX(0);
+		}
+	}
+}

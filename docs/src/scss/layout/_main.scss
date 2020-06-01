@@ -1,0 +1,38 @@
+#site-main {
+	margin-bottom: 4rem;
+}
+
+@media (max-width: #{$sidebar-width + $content-width}) {
+	#site-main::before,
+	#site-main::after {
+		content: "";
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		cursor: pointer;
+		opacity: 0;
+		visibility: hidden;
+		background-color: $overlay-color;
+		transition: opacity 250ms ease, visibility 250ms ease;
+	}
+
+	#site-main::before {
+		z-index: 1;
+		bottom: unset;
+		height: $header-height;
+		background-color: white;
+	}
+
+	#site-nav.opened + #site-main {
+		cursor: pointer;
+		touch-action: manipulation;
+	}
+
+	#site-nav.opened + #site-main::before,
+	#site-nav.opened + #site-main::after {
+		opacity: 1;
+		visibility: visible;
+	}
+}

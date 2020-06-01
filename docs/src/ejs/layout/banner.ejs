@@ -1,0 +1,30 @@
+<div class="site-banner">
+	<h2>A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies.</h2>
+	<%= require('../components/input.ejs')( { id: 'main-example', label: 'Try it out', placeholder: 'Enter a country name' } ) %>
+	<div id="option-controls" class="checkbox-group">
+		<label for="opt-smartaccent">
+			<input type="checkbox" id="opt-smartaccent" name="smartAccent" checked>
+			smartAccent
+		</label>
+		<label for="opt-matchall">
+			<input type="checkbox" id="opt-matchall" name="matchAll" checked>
+			matchAll
+		</label>
+		<label for="opt-autosearch">
+			<input type="checkbox" id="opt-autosearch" name="autoSearch" checked>
+			autoSearch
+		</label>
+		<label for="opt-autofocus">
+			<input type="checkbox" id="opt-autofocus" name="autoFocus" checked>
+			autoFocus
+		</label>
+		<label for="opt-autocomplete">
+			<input type="checkbox" id="opt-autocomplete" name="autoComplete" checked>
+			autoComplete
+		</label>
+		<label for="opt-clearable">
+			<input type="checkbox" id="opt-clearable" name="clearable" checked>
+			clearable
+		</label>
+	</div>
+</div>
