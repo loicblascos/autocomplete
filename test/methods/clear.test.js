@@ -1,4 +1,3 @@
-
 import getInstance from '../helpers/getInstance';
 
 const instance = getInstance();

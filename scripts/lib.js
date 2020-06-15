@@ -1,4 +1,3 @@
-
 const Extract = require( 'mini-css-extract-plugin' );
 const Terser = require( 'terser-webpack-plugin' );
 const config = require( './config' );
