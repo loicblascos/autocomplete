@@ -1,24 +1,59 @@
 import getInstance from '../helpers/getInstance';
 
-const instance = getInstance();
-const message = instance.components.Message.element;
-const wrapper = instance.components.Input.element;
-const list = instance.components.List.element;
+let instance;
+let message;
+let wrapper;
+let list;
 
 describe( 'aria attributes', function() {
 
+	beforeEach( () => {
+
+		instance = getInstance();
+		message = instance.components.Message.element;
+		wrapper = instance.components.Input.element;
+		list = instance.components.List.element;
+
+	} );
+
 	it( 'input aria', () => {
+
+		expect( instance.element.hasAttribute( 'aria-controls' ) ).toBe( false );
+		expect( instance.element.getAttribute( 'aria-autocomplete' ) ).toBe( 'list' );
+		expect( instance.element.hasAttribute( 'aria-activedescendant' ) ).toBe( false );
+
+	} );
+
+	it( 'input aria after a search', () => {
+
+		instance.search( 'item' );
 
 		expect( instance.element.getAttribute( 'aria-controls' ) ).toMatch( /_acplt[0-9]+/ );
 		expect( instance.element.getAttribute( 'aria-autocomplete' ) ).toBe( 'list' );
-		expect( instance.element.getAttribute( 'aria-activedescendant' ) ).toBe( '' );
+		expect( instance.element.getAttribute( 'aria-activedescendant' ) ).toMatch( /_acplt[0-9]+-[0-9]+/ );
+
+	} );
+
+	it( 'input aria after destroy', () => {
+
+		instance.destroy();
+
+		expect( instance.element.hasAttribute( 'aria-controls' ) ).toBe( false );
+		expect( instance.element.hasAttribute( 'aria-autocomplete' ) ).toBe( false );
+		expect( instance.element.hasAttribute( 'aria-activedescendant' ) ).toBe( false );
 
 	} );
 
 	it( 'wrapper aria', () => {
 
+		instance.search( 'item' );
+
 		expect( wrapper.getAttribute( 'aria-owns' ) ).toMatch( /_acplt[0-9]+/ );
 		expect( wrapper.getAttribute( 'aria-haspopup' ) ).toBe( 'listbox' );
+		expect( wrapper.getAttribute( 'aria-expanded' ) ).toBe( 'true' );
+
+		instance.close();
+
 		expect( wrapper.getAttribute( 'aria-expanded' ) ).toBe( 'false' );
 
 	} );
