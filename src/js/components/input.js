@@ -25,6 +25,7 @@ export default class Input extends Abstract {
 	 */
 	destroy() {
 
+		this.collapse();
 		this.attributes( 'remove' );
 		this.element.before( this.input );
 		this.element.remove();
@@ -44,9 +45,7 @@ export default class Input extends Abstract {
 		method = `${ method }Attribute`;
 
 		this.input[ method ]( 'autocomplete', 'off' );
-		this.input[ method ]( 'aria-controls', this.id );
 		this.input[ method ]( 'aria-autocomplete', this.options.autoComplete ? 'both' : 'list' );
-		this.input[ method ]( 'aria-activedescendant', '' );
 
 	}
 
@@ -98,6 +97,7 @@ export default class Input extends Abstract {
 	expand() {
 
 		this.element.setAttribute( 'aria-expanded', true );
+		this.input.setAttribute( 'aria-controls', this.id );
 		this.setDescendant();
 
 	}
@@ -108,7 +108,8 @@ export default class Input extends Abstract {
 	collapse() {
 
 		this.element.setAttribute( 'aria-expanded', false );
-		this.input.setAttribute( 'aria-activedescendant', '' );
+		this.input.removeAttribute( 'aria-activedescendant' );
+		this.input.removeAttribute( 'aria-controls', this.id );
 
 	}
 
@@ -118,9 +119,10 @@ export default class Input extends Abstract {
 	setDescendant() {
 
 		const index = this.index;
-		const descendant = index === 0 || index > 0 ? `${ this.id }-${ index }` : '';
+		const value = index === 0 || index > 0 ? `${ this.id }-${ index }` : '';
+		const method = value !== '' ? 'set' : 'remove';
 
-		this.input.setAttribute( 'aria-activedescendant', descendant );
+		this.input[ `${ method }Attribute` ]( 'aria-activedescendant', value );
 
 	}
 }
