@@ -56,7 +56,8 @@ export default class Input extends Abstract {
 
 		this.element = document.createElement( 'div' );
 		this.element.className = this.classes.wrapper;
-		this.element.setAttribute( 'aria-owns', this.id );
+
+		this.element.setAttribute( 'role', 'combobox' );
 		this.element.setAttribute( 'aria-haspopup', 'listbox' );
 		this.element.setAttribute( 'aria-expanded', false );
 
@@ -96,6 +97,7 @@ export default class Input extends Abstract {
 	 */
 	expand() {
 
+		this.element.setAttribute( 'aria-owns', this.id );
 		this.element.setAttribute( 'aria-expanded', true );
 		this.input.setAttribute( 'aria-controls', this.id );
 		this.setDescendant();
@@ -107,9 +109,10 @@ export default class Input extends Abstract {
 	 */
 	collapse() {
 
+		this.element.removeAttribute( 'aria-owns' );
 		this.element.setAttribute( 'aria-expanded', false );
 		this.input.removeAttribute( 'aria-activedescendant' );
-		this.input.removeAttribute( 'aria-controls', this.id );
+		this.input.removeAttribute( 'aria-controls' );
 
 	}
 
