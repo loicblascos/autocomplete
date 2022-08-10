@@ -73,7 +73,7 @@ const config = {
 						'@package   AutoComplete',
 						'@author    Loïc Blascos',
 						'@link      https://loicblascos.github.io/autocomplete/',
-						'@copyright 2020 Loïc Blascos',
+						'@copyright 2022 Loïc Blascos',
 					].join( '\n' ),
 				},
 			),
