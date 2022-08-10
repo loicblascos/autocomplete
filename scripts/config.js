@@ -1,7 +1,5 @@
-const Optimize = require( 'optimize-css-assets-webpack-plugin' );
 const Extract = require( 'mini-css-extract-plugin' );
 const Terser = require( 'terser-webpack-plugin' );
-const Prefixer = require( 'autoprefixer' );
 const webpack = require( 'webpack' );
 const path = require( 'path' );
 const isDev = process.argv.includes( '--watch' );
@@ -17,18 +15,14 @@ const config = {
 				exclude: /node_modules/,
 			},
 			{
-				test: /\.ejs$/,
-				use: 'ejs-loader',
-				exclude: /node_modules/,
+				test: /\.ejs$/i,
+				use: [ 'html-loader', 'template-ejs-loader' ],
 			},
 			{
 				test: /\.s?css$/,
 				use: [
 					{
 						loader: Extract.loader,
-						options: {
-							minimize: true,
-						},
 					},
 					{
 						loader: 'css-loader',
@@ -40,7 +34,11 @@ const config = {
 						loader: 'postcss-loader',
 						options: {
 							sourceMap: true,
-							plugins: [ new Prefixer( { grid: true } ) ],
+							postcssOptions: {
+								plugins: [
+									require( 'autoprefixer' ),
+								],
+							},
 						},
 					},
 					{
@@ -67,7 +65,6 @@ const config = {
 					},
 				},
 			),
-			new Optimize(),
 			new webpack.BannerPlugin(
 				{
 					banner: [
@@ -80,7 +77,6 @@ const config = {
 					].join( '\n' ),
 				},
 			),
-
 		],
 	},
 };

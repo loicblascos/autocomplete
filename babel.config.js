@@ -1,17 +1,8 @@
 module.exports = function( api ) {
 
-	! api.env( 'test' ) && api.cache( true );
-
-	return {
+	const config = {
 		plugins: [
 			[ '@babel/plugin-proposal-class-properties' ],
-			[
-				'@babel/plugin-transform-runtime',
-				{
-					useESModules: true,
-					version: '^7.9.0',
-				},
-			],
 		],
 		presets: [
 			[
@@ -19,4 +10,20 @@ module.exports = function( api ) {
 			],
 		],
 	};
+
+	if ( ! api.env( 'test' ) ) {
+
+		api.cache( true );
+		config.plugins.push(
+			[
+				'@babel/plugin-transform-runtime',
+				{
+					useESModules: true,
+					version: '^7.9.0',
+				},
+			],
+		);
+	}
+
+	return config;
 };

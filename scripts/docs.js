@@ -11,19 +11,19 @@ const docs = {
 		},
 	},
 	output: {
-		filename: '../docs/dist/js/docs.js',
+		path: path.resolve( __dirname, '../docs/' ),
+		filename: './dist/js/docs.js',
 	},
 	plugins: [
 		new Extract(
 			{
-				filename: '../docs/dist/css/docs.css',
+				filename: './dist/css/docs.css',
 			},
 		),
 		new HTML(
 			{
 				template: './docs/src/ejs/index.ejs',
-				filename: '../docs/index.html',
-				inject: false,
+				filename: './index.html',
 				minify: {
 					removeComments: true,
 					collapseWhitespace: true,
