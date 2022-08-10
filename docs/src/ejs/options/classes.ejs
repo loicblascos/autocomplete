@@ -1,8 +1,9 @@
 <h3 id="classes">classes</h3>
 <p>Because conflicts may happen with class names or simply because you need to use others, you can replace all classes used by the script thanks to this options:</p>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -23,4 +24,4 @@ require( '../components/code.ejs' )(
 );`
 	}
 )
-%>
+-%>

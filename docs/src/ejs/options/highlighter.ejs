@@ -1,10 +1,20 @@
 <h3 id="highlighter">highlighter</h3>
 <p>By default, the highlighter use a <code>&lt;mark></code> element to append matched string(s), from searched value, in suggestions. You can use any HTMLElement to highlight matched string(s) in suggestion. <code>highlighter</code> can be set to <code>false</code> to disable this feature.</p>
 
-<%= require('../components/input.ejs')( { id: 'highlighter-example', label: 'Example', placeholder: 'Enter a country name' } ) %>
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'highlighter-example',
+		label: 'Example',
+		placeholder: 'Enter a country name'
+	}
+)
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -20,10 +30,11 @@ new AutoComplete(
 );`
 	}
 )
-%>
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'css',
 		content:
@@ -43,4 +54,4 @@ require( '../components/code.ejs' )(
 }`
 	}
 )
-%>
+-%>

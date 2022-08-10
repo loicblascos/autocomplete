@@ -1,22 +1,22 @@
-<!DOCTYPE HTML><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="HandheldFriendly" content="true"><meta name="revisit-after" content="7 DAYS"><meta name="robots" content="All"><meta name="description" content="A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies."><title>AutoComplete</title><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2280%22%3E📖%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="./dist/css/docs.css"></head><body data-color="basic"><header id="site-header"><div id="site-button"><button type="button" id="menu-control" aria-expanded="false" aria-controls="site-menu"><span class="sr-only">Toggle navigation</span> <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" aria-hidden="true" focusable="false"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" aria-hidden="true" focusable="false"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button></div><h1 id="site-title">AutoComplete</h1><div id="site-github"><a id="github-link" href="https://github.com/loicblascos/autocomplete/"><span class="sr-only">Back to Github.com</span> <svg width="32px" height="32px" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" fill="#444444" d="M16,0.4c-8.8,0-16,7.2-16,16c0,7.1,4.6,13.1,10.9,15.2 c0.8,0.1,1.1-0.3,1.1-0.8c0-0.4,0-1.4,0-2.7c-4.5,1-5.4-2.1-5.4-2.1c-0.7-1.8-1.8-2.3-1.8-2.3c-1.5-1,0.1-1,0.1-1 c1.6,0.1,2.5,1.6,2.5,1.6c1.4,2.4,3.7,1.7,4.7,1.3c0.1-1,0.6-1.7,1-2.1c-3.6-0.4-7.3-1.8-7.3-7.9c0-1.7,0.6-3.2,1.6-4.3 c-0.2-0.4-0.7-2,0.2-4.2c0,0,1.3-0.4,4.4,1.6c1.3-0.4,2.6-0.5,4-0.5c1.4,0,2.7,0.2,4,0.5C23.1,6.6,24.4,7,24.4,7 c0.9,2.2,0.3,3.8,0.2,4.2c1,1.1,1.6,2.5,1.6,4.3c0,6.1-3.7,7.5-7.3,7.9c0.6,0.5,1.1,1.5,1.1,3c0,2.1,0,3.9,0,4.4 c0,0.4,0.3,0.9,1.1,0.8C27.4,29.5,32,23.5,32,16.4C32,7.6,24.8,0.4,16,0.4z"></path></svg></a></div></header><nav id="site-nav"><ul id="site-menu"><li><a href="#getting-started"><span aria-hidden="true">🚀</span>&nbsp;Getting started</a><ul><li><a href="#installation">Installation</a></li><li><a href="#import">Import</a></li><li><a href="#assets">Assets</a></li><li><a href="#markup">Markup</a></li><li><a href="#initialize">initialize</a></li></ul></li><li><a href="#options"><span aria-hidden="true">📦</span>&nbsp;Options</a><ul><li><a href="#source">source</a></li><li><a href="#filterResults">filterResults</a></li><li><a href="#sortResults">sortResults</a></li><li><a href="#renderItem">renderItem</a></li><li><a href="#highlighter">highlighter</a></li><li><a href="#menuTarget">menuTarget</a></li><li><a href="#classes">classes</a></li><li><a href="#messages">messages</a></li></ul></li><li><a href="#methods"><span aria-hidden="true">📖</span>&nbsp;Methods</a><ul><li><a href="#destroy">destroy()</a></li><li><a href="#enable-disable">enable()</a></li><li><a href="#enable-disable">disable()</a></li><li><a href="#open-close">open()</a></li><li><a href="#open-close">close()</a></li><li><a href="#search-clear">search()</a></li><li><a href="#search-clear">clear()</a></li><li><a href="#select-highlight">select()</a></li><li><a href="#select-highlight">highlight()</a></li></ul></li><li><a href="#events"><span aria-hidden="true">⚡️</span>&nbsp;Events</a><ul><li><a href="#events-logger">onOpen</a></li><li><a href="#events-logger">onClose</a></li><li><a href="#events-logger">onResize</a></li><li><a href="#events-logger">onSearch</a></li><li><a href="#events-logger">onClear</a></li><li><a href="#events-logger">onAbort</a></li><li><a href="#events-logger">onSelect</a></li><li><a href="#events-logger">onHighlight</a></li></ul></li><li><a href="#extras"><span aria-hidden="true">🎉</span>&nbsp;Extras</a><ul><li><a href="#multiple-values">Multiple values</a></li><li><a href="#dynamic-values">Dynamic values</a></li></ul></li></ul></nav><main id="site-main"><section><div class="site-banner"><h2>A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies.</h2><label for="main-example" class="input-label"><span aria-hidden="true">👇</span> Try it out</label><div class="input-wrapper"><input type="text" id="main-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div id="option-controls" class="checkbox-group"><label for="opt-smartaccent"><input type="checkbox" id="opt-smartaccent" name="smartAccent" checked="checked"> smartAccent</label> <label for="opt-matchall"><input type="checkbox" id="opt-matchall" name="matchAll" checked="checked"> matchAll</label> <label for="opt-autosearch"><input type="checkbox" id="opt-autosearch" name="autoSearch" checked="checked"> autoSearch</label> <label for="opt-autofocus"><input type="checkbox" id="opt-autofocus" name="autoFocus" checked="checked"> autoFocus</label> <label for="opt-autocomplete"><input type="checkbox" id="opt-autocomplete" name="autoComplete" checked="checked"> autoComplete</label> <label for="opt-clearable"><input type="checkbox" id="opt-clearable" name="clearable" checked="checked"> clearable</label></div></div></section><section><h2 id="getting-started"><span aria-hidden="true">🚀</span>&nbsp;Getting Started</h2><p>To use AutoComple on your site, you need to import JavaScript/CSS assets and to instantiate the main <code>class</code> with an <code>HTMLElement</code>.</p><h3 id="installation">Installation</h3><p>Install AutoComplete from npm package manager:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-bash">npm install @loicblascos/autocomplete --save</code></pre></div>More information about the npm package can be found on <a href="https://www.npmjs.com/package/@loicblascos/autocomplete">npm repository</a>.<h3 id="import">Import</h3><p>You can import polyfills, style and main class from package as follows:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">import '@loicblascos/autocomplete/lib/polyfills'; // Optional
-import '@loicblascos/autocomplete/lib/style.css'; // Optional
-import AutoComplete from '@loicblascos/autocomplete';</code></pre></div><h3 id="assets">Assets</h3><p>If you do not use import, you need to include AutoComplete assets in the document:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-markup">&lt;link rel="stylesheet" href="autocomplete.css"&gt;
-&lt;script src="autocomplete.js" async>&lt;/script&gt;</code></pre></div><h3 id="markup">Markup</h3><p>AutoComplete script works with search and text input elements. <a href="https://www.w3.org/WAI/tutorials/forms/labels/">Explicit and Implicit input labels</a> are supported by AutoComplete script to be fully accessible.</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-markup">&lt;!-- Explicit label --&gt;
-&lt;label for="my-input"&gt;Input Label&lt;/label&gt;
-&lt;input type="text" id="my-input" placeholder="type to search"&gt;
+<!DOCTYPE HTML><html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="HandheldFriendly" content="true"><meta name="revisit-after" content="7 DAYS"><meta name="robots" content="All"><meta name="description" content="A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies."><title>AutoComplete</title><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2280%22%3E📖%3C/text%3E%3C/svg%3E"><script defer="defer" src="./dist/js/docs.js"></script><link href="./dist/css/docs.css" rel="stylesheet"></head><body data-color="basic"><header id="site-header"><div id="site-button"><button type="button" id="menu-control" aria-expanded="false" aria-controls="site-menu"><span class="sr-only">Toggle navigation</span> <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" aria-hidden="true" focusable="false"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg> <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" aria-hidden="true" focusable="false"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button></div><h1 id="site-title">AutoComplete</h1><div id="site-github"><a id="github-link" href="https://github.com/loicblascos/autocomplete/"><span class="sr-only">Back to Github.com</span> <svg width="32px" height="32px" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path fill-rule="evenodd" clip-rule="evenodd" fill="#444444" d="M16,0.4c-8.8,0-16,7.2-16,16c0,7.1,4.6,13.1,10.9,15.2 c0.8,0.1,1.1-0.3,1.1-0.8c0-0.4,0-1.4,0-2.7c-4.5,1-5.4-2.1-5.4-2.1c-0.7-1.8-1.8-2.3-1.8-2.3c-1.5-1,0.1-1,0.1-1 c1.6,0.1,2.5,1.6,2.5,1.6c1.4,2.4,3.7,1.7,4.7,1.3c0.1-1,0.6-1.7,1-2.1c-3.6-0.4-7.3-1.8-7.3-7.9c0-1.7,0.6-3.2,1.6-4.3 c-0.2-0.4-0.7-2,0.2-4.2c0,0,1.3-0.4,4.4,1.6c1.3-0.4,2.6-0.5,4-0.5c1.4,0,2.7,0.2,4,0.5C23.1,6.6,24.4,7,24.4,7 c0.9,2.2,0.3,3.8,0.2,4.2c1,1.1,1.6,2.5,1.6,4.3c0,6.1-3.7,7.5-7.3,7.9c0.6,0.5,1.1,1.5,1.1,3c0,2.1,0,3.9,0,4.4 c0,0.4,0.3,0.9,1.1,0.8C27.4,29.5,32,23.5,32,16.4C32,7.6,24.8,0.4,16,0.4z"></path></svg></a></div></header><nav id="site-nav"><ul id="site-menu"><li><a href="#getting-started"><span aria-hidden="true">🚀</span>&nbsp;Getting started</a><ul><li><a href="#installation">Installation</a></li><li><a href="#import">Import</a></li><li><a href="#assets">Assets</a></li><li><a href="#markup">Markup</a></li><li><a href="#initialize">initialize</a></li></ul></li><li><a href="#options"><span aria-hidden="true">📦</span>&nbsp;Options</a><ul><li><a href="#source">source</a></li><li><a href="#filterResults">filterResults</a></li><li><a href="#sortResults">sortResults</a></li><li><a href="#renderItem">renderItem</a></li><li><a href="#highlighter">highlighter</a></li><li><a href="#menuTarget">menuTarget</a></li><li><a href="#classes">classes</a></li><li><a href="#messages">messages</a></li></ul></li><li><a href="#methods"><span aria-hidden="true">📖</span>&nbsp;Methods</a><ul><li><a href="#destroy">destroy()</a></li><li><a href="#enable-disable">enable()</a></li><li><a href="#enable-disable">disable()</a></li><li><a href="#open-close">open()</a></li><li><a href="#open-close">close()</a></li><li><a href="#search-clear">search()</a></li><li><a href="#search-clear">clear()</a></li><li><a href="#select-highlight">select()</a></li><li><a href="#select-highlight">highlight()</a></li></ul></li><li><a href="#events"><span aria-hidden="true">⚡️</span>&nbsp;Events</a><ul><li><a href="#events-logger">onOpen</a></li><li><a href="#events-logger">onClose</a></li><li><a href="#events-logger">onResize</a></li><li><a href="#events-logger">onSearch</a></li><li><a href="#events-logger">onClear</a></li><li><a href="#events-logger">onAbort</a></li><li><a href="#events-logger">onSelect</a></li><li><a href="#events-logger">onHighlight</a></li></ul></li><li><a href="#extras"><span aria-hidden="true">🎉</span>&nbsp;Extras</a><ul><li><a href="#multiple-values">Multiple values</a></li><li><a href="#dynamic-values">Dynamic values</a></li></ul></li></ul></nav><main id="site-main"><section><div class="site-banner"><h2>A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies.</h2><label for="main-example" class="input-label"><span aria-hidden="true">👇</span> Try it out</label><div class="input-wrapper"><input type="text" id="main-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div id="option-controls" class="checkbox-group"><label for="opt-smartaccent"><input type="checkbox" id="opt-smartaccent" name="smartAccent" checked="checked"> smartAccent</label> <label for="opt-matchall"><input type="checkbox" id="opt-matchall" name="matchAll" checked="checked"> matchAll</label> <label for="opt-autosearch"><input type="checkbox" id="opt-autosearch" name="autoSearch" checked="checked"> autoSearch</label> <label for="opt-autofocus"><input type="checkbox" id="opt-autofocus" name="autoFocus" checked="checked"> autoFocus</label> <label for="opt-autocomplete"><input type="checkbox" id="opt-autocomplete" name="autoComplete" checked="checked"> autoComplete</label> <label for="opt-clearable"><input type="checkbox" id="opt-clearable" name="clearable" checked="checked"> clearable</label></div></div></section><section><h2 id="getting-started"><span aria-hidden="true">🚀</span>&nbsp;Getting Started</h2><p>To use AutoComple on your site, you need to import JavaScript/CSS assets and to instantiate the main <code>class</code> with an <code>HTMLElement</code>.</p><h3 id="installation">Installation</h3><p>Install AutoComplete from npm package manager:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-bash">npm install @loicblascos/autocomplete --save</code></pre></div>More information about the npm package can be found on <a href="https://www.npmjs.com/package/@loicblascos/autocomplete">npm repository</a>.<h3 id="import">Import</h3><p>You can import polyfills, style and main class from package as follows:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">import &#39;@loicblascos/autocomplete/lib/polyfills&#39;; // Optional
+import &#39;@loicblascos/autocomplete/lib/style.css&#39;; // Optional
+import AutoComplete from &#39;@loicblascos/autocomplete&#39;;</code></pre></div><h3 id="assets">Assets</h3><p>If you do not use import, you need to include AutoComplete assets in the document:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-markup">&lt;link rel=&#34;stylesheet&#34; href=&#34;autocomplete.css&#34;&gt;
+&lt;script src=&#34;autocomplete.js&#34; async&gt;&lt;/script&gt;</code></pre></div><h3 id="markup">Markup</h3><p>AutoComplete script works with search and text input elements. <a href="https://www.w3.org/WAI/tutorials/forms/labels/">Explicit and Implicit input labels</a> are supported by AutoComplete script to be fully accessible.</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-markup">&lt;!-- Explicit label --&gt;
+&lt;label for=&#34;my-input&#34;&gt;Input Label&lt;/label&gt;
+&lt;input type=&#34;text&#34; id=&#34;my-input&#34; placeholder=&#34;type to search&#34;&gt;
 
 &lt;!-- Implicit label --&gt;
 &lt;label&gt;
 	Input Label
-	&lt;input type="text" id="my-input" placeholder="type to search"&gt;
-&lt;/label&gt;</code></pre></div><h3 id="initialize">Initialize</h3><p>The <code>AutoComplete()</code> constructor accepts two arguments: the input element and an options object.</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const input = document.querySelector( '#my-input' );
+	&lt;input type=&#34;text&#34; id=&#34;my-input&#34; placeholder=&#34;type to search&#34;&gt;
+&lt;/label&gt;</code></pre></div><h3 id="initialize">Initialize</h3><p>The <code>AutoComplete()</code> constructor accepts two arguments: the input element and an options object.</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const input = document.querySelector( &#39;#my-input&#39; );
 const acplt = new AutoComplete(
 	input,
 	{
 		source: [
-			{ label: 'label 1', value: 'value 1' },
-			{ label: 'label 2', value: 'value 2' },
-			{ label: 'label 3', value: 'value 3' },
+			{ label: &#39;label 1&#39;, value: &#39;value 1&#39; },
+			{ label: &#39;label 2&#39;, value: &#39;value 2&#39; },
+			{ label: &#39;label 3&#39;, value: &#39;value 3&#39; },
 		],
 		minLength: 1,
 		maxResults: 50,
@@ -26,7 +26,7 @@ const acplt = new AutoComplete(
 new AutoComplete(
 	input,
 	{
-		source: [ 'value 1', 'value 2', 'value 3' ],
+		source: [ &#39;value 1&#39;, &#39;value 2&#39;, &#39;value 3&#39; ],
 	}
 );
 
@@ -35,9 +35,9 @@ new AutoComplete(
 	input,
 	{
 		source: [
-			{ label: 'label 1', value: 'value 1' },
-			{ label: 'label 2', value: 'value 2' },
-			{ label: 'label 3', value: 'value 3' },
+			{ label: &#39;label 1&#39;, value: &#39;value 1&#39; },
+			{ label: &#39;label 2&#39;, value: &#39;value 2&#39; },
+			{ label: &#39;label 3&#39;, value: &#39;value 3&#39; },
 		],
 	}
 );</code></pre></div><p>When using array of objects, you can pass other properties and use them in the option <code><a href="#renderItem">renderItem</a></code>. It can be useful to create custom markup with custom content that should not be directly searched.</p><p>If you need to make some data preprocessing or make asynchronous request to output suggestions, you can use a function and call the response callback passed as argument:</p><label for="async-example" class="input-label"><span aria-hidden="true">👇</span> Asynchronous example</label><div class="input-wrapper"><input type="text" id="async-example" placeholder="Enter a Github repository name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">new AutoComplete(
@@ -51,11 +51,11 @@ new AutoComplete(
 		 */
 		source: function( value, response ) {
 
-			fetch( &#96;https://api.github.com/search/repositories?q=&#36;{value}&#96; )
-			.then( obj => obj.json() )
-			.then( data => {
+			fetch( `https://api.github.com/search/repositories?q=${value}` )
+			.then( obj =&gt; obj.json() )
+			.then( data =&gt; {
 
-				const source = data.items.map( item => item.full_name );
+				const source = data.items.map( item =&gt; item.full_name );
 				response( source );
 
 			} );
@@ -63,7 +63,7 @@ new AutoComplete(
 		},
 		loader: true,
 	}
-);</code></pre></div><h3 id="filterResults">filterResults</h3><p>By default, results from suggestions are filtered by the label. You can use this option to add extra logic to match searched value in suggestions.</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const menuTarget = document.querySelector( '.menu-target' );
+);</code></pre></div><h3 id="filterResults">filterResults</h3><p>By default, results from suggestions are filtered by the label. You can use this option to add extra logic to match searched value in suggestions.</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const menuTarget = document.querySelector( &#39;.menu-target&#39; );
 
 new AutoComplete(
 	input,
@@ -90,7 +90,7 @@ new AutoComplete(
 	{
 		source: [ /* ... */ ],
 		// Default function used to sort.
-		sortResults: ( a, b ) => {
+		sortResults: ( a, b ) =&gt; {
 
 			return (
 				a.index - b.index ||                // Sort by matched index.
@@ -99,54 +99,54 @@ new AutoComplete(
 			);
 		}
 	}
-);</code></pre></div><h3 id="renderItem">renderItem</h3><p>By default, suggestions output string in list item and cannot output HTML for performance and security reasons (XSS vulnerability from remote source for example). However, you can control the rendered content in each list item thanks to this option.</p><p><code>renderItem</code> option accepts a function with as arguments the suggestion (from source) and the item element from the list. The function should return an HTMLelement or string to append in the list item. By returning <code>null</code> it will skip the item from the list.</p><label for="renderitem-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="renderitem-example" placeholder="Enter a color name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const colorSwatch = document.createElement( 'span' );
+);</code></pre></div><h3 id="renderItem">renderItem</h3><p>By default, suggestions output string in list item and cannot output HTML for performance and security reasons (XSS vulnerability from remote source for example). However, you can control the rendered content in each list item thanks to this option.</p><p><code>renderItem</code> option accepts a function with as arguments the suggestion (from source) and the item element from the list. The function should return an HTMLelement or string to append in the list item. By returning <code>null</code> it will skip the item from the list.</p><label for="renderitem-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="renderitem-example" placeholder="Enter a color name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const colorSwatch = document.createElement( &#39;span&#39; );
 
 new AutoComplete(
 	input,
 	{
 		source: [
-			{ label: '#f0f8ff - aliceblue', value: '#f0f8ff' },
-			{ label: '#faebd7 - antiquewhite', value: '#faebd7' },
-			{ label: '#00ffff - aqua', value: '#00ffff' },
-			{ label: '#7fffd4 - aquamarine', value: '#7fffd4' },
-			{ label: '#f0ffff - azure', value: '#f0ffff' },
-			{ label: '#f5f5dc - beige', value: '#f5f5dc' },
-			{ label: '#ffe4c4 - bisque', value: '#ffe4c4' },
-			{ label: '#000000 - black', value: '#000000' },
+			{ label: &#39;#f0f8ff - aliceblue&#39;, value: &#39;#f0f8ff&#39; },
+			{ label: &#39;#faebd7 - antiquewhite&#39;, value: &#39;#faebd7&#39; },
+			{ label: &#39;#00ffff - aqua&#39;, value: &#39;#00ffff&#39; },
+			{ label: &#39;#7fffd4 - aquamarine&#39;, value: &#39;#7fffd4&#39; },
+			{ label: &#39;#f0ffff - azure&#39;, value: &#39;#f0ffff&#39; },
+			{ label: &#39;#f5f5dc - beige&#39;, value: &#39;#f5f5dc&#39; },
+			{ label: &#39;#ffe4c4 - bisque&#39;, value: &#39;#ffe4c4&#39; },
+			{ label: &#39;#000000 - black&#39;, value: &#39;#000000&#39; },
 			/* ... */
 		],
 		maxResults: 50,
-		renderItem: ( suggestion, item ) => {
+		renderItem: ( suggestion, item ) =&gt; {
 
 			// We append color swatch directly in list item.
 			item.append( colorSwatch.cloneNode() );
 			// We set css variable on list item.
-			item.style.setProperty( '--color', suggestion.value );
+			item.style.setProperty( &#39;--color&#39;, suggestion.value );
 
 
 			// We return the highlighted suggestion content to append in item.
 			// Content is a documentFragment because highlight option is enabled.
-			// Otherwise it'll be a string and it'll erase our appended element.
+			// Otherwise it&#39;ll be a string and it&#39;ll erase our appended element.
 			return suggestion.content;
 
 		}
 	}
-);</code></pre></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-css">.acplt-list .acplt-item[style^="--color"] {
+);</code></pre></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-css">.acplt-list .acplt-item[style^=&#34;--color&#34;] {
 	display: flex;
 	color: black;
 	font-family: monospace;
 	white-space: pre;
 }
 
-.acplt-list .acplt-item[style^="--color"] span {
+.acplt-list .acplt-item[style^=&#34;--color&#34;] span {
 	width: 1rem;
 	height: 1rem;
 	margin-right: 0.5rem;
 	background-color: var(--color);
 	border-radius: 100%;
 	box-shadow: 0 0 0 1px #e6ecf1;
-}</code></pre></div><h3 id="highlighter">highlighter</h3><p>By default, the highlighter use a <code>&lt;mark></code> element to append matched string(s), from searched value, in suggestions. You can use any HTMLElement to highlight matched string(s) in suggestion. <code>highlighter</code> can be set to <code>false</code> to disable this feature.</p><label for="highlighter-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="highlighter-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const highlighter = document.createElement( 'mark' );
-highlighter.className = 'highlighter';
+}</code></pre></div><h3 id="highlighter">highlighter</h3><p>By default, the highlighter use a <code>&lt;mark></code> element to append matched string(s), from searched value, in suggestions. You can use any HTMLElement to highlight matched string(s) in suggestion. <code>highlighter</code> can be set to <code>false</code> to disable this feature.</p><label for="highlighter-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="highlighter-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const highlighter = document.createElement( &#39;mark&#39; );
+highlighter.className = &#39;highlighter&#39;;
 
 new AutoComplete(
 	input,
@@ -160,14 +160,14 @@ new AutoComplete(
 
 .acplt-item .highlighter::before,
 .acplt-item .highlighter::after {
-	content: "·";
+	content: &#34;·&#34;;
 	background-color: white;
 }
 
 .acplt-item[aria-selected=true] .highlighter::before,
 .acplt-item[aria-selected=true] .highlighter::after {
 	background-color: #e9f2ff;
-}</code></pre></div><h3 id="menuTarget">menuTarget</h3><p>By default, the menu is appended in <code>document.body</code> element. But, it may conflict with your layout, so you can set the element in which you want to append the menu thanks to this option. By changing the menu target and by playing on menu style it's even possible to inline it in the document.</p><label for="menutarget-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="menutarget-example" placeholder="Focus input to inline menu"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="menu-target"></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const menuTarget = document.querySelector( '.menu-target' );
+}</code></pre></div><h3 id="menuTarget">menuTarget</h3><p>By default, the menu is appended in <code>document.body</code> element. But, it may conflict with your layout, so you can set the element in which you want to append the menu thanks to this option. By changing the menu target and by playing on menu style it's even possible to inline it in the document.</p><label for="menutarget-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="menutarget-example" placeholder="Focus input to inline menu"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="menu-target"></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const menuTarget = document.querySelector( &#39;.menu-target&#39; );
 
 new AutoComplete(
 	input,
@@ -177,9 +177,9 @@ new AutoComplete(
 		minLength: 0,
 		maxResults: 5,
 		autoSearch: true,
-		onResize: ( { style } ) => {
+		onResize: ( { style } ) =&gt; {
 
-			style.position = 'relative';
+			style.position = &#39;relative&#39;;
 			style.zIndex = 0;
 			style.left = 0;
 			style.top = 0;
@@ -191,13 +191,13 @@ new AutoComplete(
 	{
 		// Default classes.
 		classes: {
-			wrapper: 'acplt',
-			menu: 'acplt-menu',
-			list: 'acplt-list',
-			item: 'acplt-item',
-			clear: 'acplt-clear',
-			loader: 'acplt-loader',
-			message: 'acplt-message',
+			wrapper: &#39;acplt&#39;,
+			menu: &#39;acplt-menu&#39;,
+			list: &#39;acplt-list&#39;,
+			item: &#39;acplt-item&#39;,
+			clear: &#39;acplt-clear&#39;,
+			loader: &#39;acplt-loader&#39;,
+			message: &#39;acplt-message&#39;,
 		},
 	}
 );</code></pre></div><h3 id="messages">messages</h3><p>AutoComplete script is accessible and follows <a href="https://www.w3.org/TR/wai-aria-practices/examples/combobox/aria1.1pattern/listbox-combo.html">W3 ARIA practices</a>. It appends messages on user interactions that can be announced by assistive technologies. You can easily localize these messages thanks to this option:</p><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">new AutoComplete(
@@ -205,49 +205,49 @@ new AutoComplete(
 	{
 		// Default messages.
 		messages: {
-			open: 'Use Up and Down to choose suggestions and press Enter to select suggestion.',
-			input: 'Type to search or press Escape to clear the input.',
-			clear: 'Field cleared.',
-			select: '%s suggestion was selected.',
-			noResults: 'No suggestions found.',
-			loading: 'Loading suggestions...',
+			open: &#39;Use Up and Down to choose suggestions and press Enter to select suggestion.&#39;,
+			input: &#39;Type to search or press Escape to clear the input.&#39;,
+			clear: &#39;Field cleared.&#39;,
+			select: &#39;%s suggestion was selected.&#39;,
+			noResults: &#39;No suggestions found.&#39;,
+			loading: &#39;Loading suggestions...&#39;,
 		},
 	}
-);</code></pre></div></section><section><h2 id="methods"><span aria-hidden="true">📖</span>&nbsp;Methods</h2><p>AutoComplete comes with several public methods that you can call at any time after instantiation. The following methods allow to programmatically interact with input and menu.</p><div class="table"><table><thead><tr><th>Name</th><th>Argument</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><span class="prop-name">destroy</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Remove functionalities and instance attached to the input.</td></tr><tr><td><span class="prop-name">enable</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Remove <code>disable</code> attribute from input and allow search.</td></tr><tr><td><span class="prop-name">disable</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Add <code>disable</code> attribute and prevent user to search.</td></tr><tr><td><span class="prop-name">open</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Open menu of suggestions from the last search.</td></tr><tr><td><span class="prop-name">close</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Close menu of suggestions.</td></tr><tr><td><span class="prop-name">clear</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Clear input value, close menu and update state.</td></tr><tr><td><span class="prop-name">search</span></td><td><span class="prop-default"><code>value</code></span></td><td><span class="prop-type">{string}</span></td><td>Trigger a manual search from a string.</td></tr><tr><td><span class="prop-name">select</span></td><td><span class="prop-default"><code>index</code></span></td><td><span class="prop-type">{number}</span></td><td>Select a suggestion in the menu from an index.</td></tr><tr><td><span class="prop-name">highlight</span></td><td><span class="prop-default"><code>index</code></span></td><td><span class="prop-type">{number}</span></td><td>Highlight a suggestion in the menu from an index.</td></tr></tbody></table></div><h3 id="destroy">destroy()</h3><p>Remove AutoComplete functionality and instance attached to the input. <code>destroy()</code> will return the element back to its pre-initialized state.</p><div class="field-wrapper"><label for="destroy-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="init-btn">Initialize</button> <button type="button" id="destroy-btn">Destroy</button></div><div class="input-wrapper"><input type="text" id="destroy-example" value="France" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const init = document.querySelector( '#init-btn' );
-const destroy = document.querySelector( '#destroy-btn' );
-const instantiate = () => instance = new AutoComplete( input, { source: [ /* ... */ ] } );
+);</code></pre></div></section><section><h2 id="methods"><span aria-hidden="true">📖</span>&nbsp;Methods</h2><p>AutoComplete comes with several public methods that you can call at any time after instantiation. The following methods allow to programmatically interact with input and menu.</p><div class="table"><table><thead><tr><th>Name</th><th>Argument</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><span class="prop-name">destroy</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Remove functionalities and instance attached to the input.</td></tr><tr><td><span class="prop-name">enable</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Remove <code>disable</code> attribute from input and allow search.</td></tr><tr><td><span class="prop-name">disable</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Add <code>disable</code> attribute and prevent user to search.</td></tr><tr><td><span class="prop-name">open</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Open menu of suggestions from the last search.</td></tr><tr><td><span class="prop-name">close</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Close menu of suggestions.</td></tr><tr><td><span class="prop-name">clear</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Clear input value, close menu and update state.</td></tr><tr><td><span class="prop-name">search</span></td><td><span class="prop-default"><code>value</code></span></td><td><span class="prop-type">{string}</span></td><td>Trigger a manual search from a string.</td></tr><tr><td><span class="prop-name">select</span></td><td><span class="prop-default"><code>index</code></span></td><td><span class="prop-type">{number}</span></td><td>Select a suggestion in the menu from an index.</td></tr><tr><td><span class="prop-name">highlight</span></td><td><span class="prop-default"><code>index</code></span></td><td><span class="prop-type">{number}</span></td><td>Highlight a suggestion in the menu from an index.</td></tr></tbody></table></div><h3 id="destroy">destroy()</h3><p>Remove AutoComplete functionality and instance attached to the input. <code>destroy()</code> will return the element back to its pre-initialized state.</p><div class="field-wrapper"><label for="destroy-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="init-btn">Initialize</button> <button type="button" id="destroy-btn">Destroy</button></div><div class="input-wrapper"><input type="text" id="destroy-example" value="France" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const init = document.querySelector( &#39;#init-btn&#39; );
+const destroy = document.querySelector( &#39;#destroy-btn&#39; );
+const instantiate = () =&gt; instance = new AutoComplete( input, { source: [ /* ... */ ] } );
 let instance;
 
 instantiate();
-init.addEventListener( 'click', instantiate );
-destroy.addEventListener( 'click', () => instance && instance.destroy() );</code></pre></div><h3 id="enable-disable">enable() / disable()</h3><p>While it's possible to directly disable/enable the input with <code>disabled</code> attribute, these methods will handle other aspects like closing the menu or updating clear button.</p><div class="field-wrapper"><label for="enable-disable-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="enable-btn">Enable</button> <button type="button" id="disable-btn">Disable</button></div><div class="input-wrapper"><input type="text" id="enable-disable-example" value="France" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const enable = document.querySelector( '#enable-btn' );
-const disable = document.querySelector( '#disable-btn' );
+init.addEventListener( &#39;click&#39;, instantiate );
+destroy.addEventListener( &#39;click&#39;, () =&gt; instance &amp;&amp; instance.destroy() );</code></pre></div><h3 id="enable-disable">enable() / disable()</h3><p>While it's possible to directly disable/enable the input with <code>disabled</code> attribute, these methods will handle other aspects like closing the menu or updating clear button.</p><div class="field-wrapper"><label for="enable-disable-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="enable-btn">Enable</button> <button type="button" id="disable-btn">Disable</button></div><div class="input-wrapper"><input type="text" id="enable-disable-example" value="France" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const enable = document.querySelector( &#39;#enable-btn&#39; );
+const disable = document.querySelector( &#39;#disable-btn&#39; );
 const instance = new AutoComplete( input, { source: [ /* ... */ ] } );
 
-enable.addEventListener( 'click', () => instance.enable() );
-disable.addEventListener( 'click', () => instance.disable() );</code></pre></div><h3 id="open-close">open() / close()</h3><p><code>open</code> method allows to open suggestions from last search if it exists. In this example, we populate the list of suggestion from empty searched string to simulate a search history.</p><div class="field-wrapper"><label for="open-close-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="open-btn">Open</button> <button type="button" id="close-btn">Close</button></div><div class="input-wrapper"><input type="text" id="open-close-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const open = document.querySelector( '#open-btn' );
-const close = document.querySelector( '#close-btn' );
+enable.addEventListener( &#39;click&#39;, () =&gt; instance.enable() );
+disable.addEventListener( &#39;click&#39;, () =&gt; instance.disable() );</code></pre></div><h3 id="open-close">open() / close()</h3><p><code>open</code> method allows to open suggestions from last search if it exists. In this example, we populate the list of suggestion from empty searched string to simulate a search history.</p><div class="field-wrapper"><label for="open-close-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="open-btn">Open</button> <button type="button" id="close-btn">Close</button></div><div class="input-wrapper"><input type="text" id="open-close-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const open = document.querySelector( &#39;#open-btn&#39; );
+const close = document.querySelector( &#39;#close-btn&#39; );
 const instance = new AutoComplete( input, { source: [ /* ... */ ] } );
 
 // We populate the list of suggestions for demo purpose.
-instance.populate( '', instance.options.source );
+instance.populate( &#39;&#39;, instance.options.source );
 
-open.addEventListener( 'click', () => instance.open() );
-close.addEventListener( 'click', () => instance.close() );</code></pre></div><h3 id="search-clear">search() / clear()</h3><p><code>search()</code> method accepts as argument a string to programmatically trigger a search from a string. It allows to search in suggestions and to open menu if there are results. You can also use <code>clear()</code> method to clear a search (clear input value and close menu).</p><div class="field-wrapper"><label for="search-clear-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="search-btn">Search</button> <button type="button" id="clear-btn">Clear</button></div><div class="input-wrapper"><input type="text" id="search-clear-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const search = document.querySelector( '#search-btn' );
-const clear = document.querySelector( '#clear-btn' );
+open.addEventListener( &#39;click&#39;, () =&gt; instance.open() );
+close.addEventListener( &#39;click&#39;, () =&gt; instance.close() );</code></pre></div><h3 id="search-clear">search() / clear()</h3><p><code>search()</code> method accepts as argument a string to programmatically trigger a search from a string. It allows to search in suggestions and to open menu if there are results. You can also use <code>clear()</code> method to clear a search (clear input value and close menu).</p><div class="field-wrapper"><label for="search-clear-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="search-btn">Search</button> <button type="button" id="clear-btn">Clear</button></div><div class="input-wrapper"><input type="text" id="search-clear-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const search = document.querySelector( &#39;#search-btn&#39; );
+const clear = document.querySelector( &#39;#clear-btn&#39; );
 const instance = new AutoComplete( input, { source: [ /* ... */ ] } );
 
-search.addEventListener( 'click', () => {
+search.addEventListener( &#39;click&#39;, () =&gt; {
 
-	input.value = 'saint';
-	instance.search( 'saint' );
+	input.value = &#39;saint&#39;;
+	instance.search( &#39;saint&#39; );
 
 } );
 
-clear.addEventListener( 'click', () => instance.clear() );</code></pre></div><h3 id="select-highlight">select() / highlight()</h3><p><code>select()</code> and <code>highlight()</code> methods accept as argument a number to programmatically select or highlight a suggestion from an index.</p><div class="field-wrapper"><label for="select-highlight-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="select-btn">Select</button> <button type="button" id="moveup-btn">Up</button> <button type="button" id="movedown-btn">Down</button></div><div class="input-wrapper"><input type="text" id="select-highlight-example" placeholder="Use Up and Down to choose suggestions"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="menu-target"></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const select = document.querySelector( '#select-btn' );
-const moveUp = document.querySelector( '#moveup-btn' );
-const moveDown = document.querySelector( '#movedown-btn' );
-const menuTarget = document.querySelector( '#menu-target' );
+clear.addEventListener( &#39;click&#39;, () =&gt; instance.clear() );</code></pre></div><h3 id="select-highlight">select() / highlight()</h3><p><code>select()</code> and <code>highlight()</code> methods accept as argument a number to programmatically select or highlight a suggestion from an index.</p><div class="field-wrapper"><label for="select-highlight-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="button-group"><button type="button" id="select-btn">Select</button> <button type="button" id="moveup-btn">Up</button> <button type="button" id="movedown-btn">Down</button></div><div class="input-wrapper"><input type="text" id="select-highlight-example" placeholder="Use Up and Down to choose suggestions"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div></div><div class="menu-target"></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const select = document.querySelector( &#39;#select-btn&#39; );
+const moveUp = document.querySelector( &#39;#moveup-btn&#39; );
+const moveDown = document.querySelector( &#39;#movedown-btn&#39; );
+const menuTarget = document.querySelector( &#39;#menu-target&#39; );
 const instance = new AutoComplete(
 	input,
 	{
@@ -255,9 +255,9 @@ const instance = new AutoComplete(
 		menuTarget,
 		minLength: 0,
 		maxResults: 20,
-		onResize: ( { style } ) => {
+		onResize: ( { style } ) =&gt; {
 
-			style.position = 'relative';
+			style.position = &#39;relative&#39;;
 			style.zIndex = 0;
 			style.left = 0;
 			style.top = 0;
@@ -267,24 +267,24 @@ const instance = new AutoComplete(
 );
 
 // For demo purpose.
-instance.close = () => null;
+instance.close = () =&gt; null;
 instance.disable();
 instance.search();
 
-select.addEventListener( 'click', () => instance.select( instance.index ) );
-moveUp.addEventListener( 'click', () => instance.highlight( instance.index - 1 ) );
-moveDown.addEventListener( 'click', () => instance.highlight( instance.index + 1 ) );</code></pre></div></section><section><h2 id="events"><span aria-hidden="true">⚡️</span>&nbsp;Events</h2><p>AutoComplete comes with several events triggered after actions that you can easily capture.</p><div class="table"><table><thead><tr><th>Name</th><th>Argument</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><span class="prop-name">onOpen</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the menu was opened.</td></tr><tr><td><span class="prop-name">onClose</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the menu was closes.</td></tr><tr><td><span class="prop-name">onResize</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the menu is resized.</td></tr><tr><td><span class="prop-name">onSearch</span></td><td><span class="prop-default"><code>value</code></span></td><td><span class="prop-type">{string}</span></td><td>Triggered before a search is performed.</td></tr><tr><td><span class="prop-name">onAbort</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered when a search is aborted (async).</td></tr><tr><td><span class="prop-name">onClear</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the input has been cleared.</td></tr><tr><td><span class="prop-name">onSelect</span></td><td><span class="prop-default"><code>item</code></span></td><td><span class="prop-type">{Object}</span></td><td>Triggered after a suggestion has been selected.</td></tr><tr><td><span class="prop-name">onHighlight</span></td><td><span class="prop-default"><code>item</code></span></td><td><span class="prop-type">{object}</span></td><td>Triggered after a suggestion has been highlighted.</td></tr></tbody></table></div><h3 id="events-logger">Events Logger</h3><label for="events-example" class="input-label"><span aria-hidden="true">👇</span> Example</label> <code class="events-logger"><span class="log-event">### Events Logger ###&NewLine;</span></code><div class="input-wrapper"><input type="text" id="events-example" placeholder="Type to see events log"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">new AutoComplete(
+select.addEventListener( &#39;click&#39;, () =&gt; instance.select( instance.index ) );
+moveUp.addEventListener( &#39;click&#39;, () =&gt; instance.highlight( instance.index - 1 ) );
+moveDown.addEventListener( &#39;click&#39;, () =&gt; instance.highlight( instance.index + 1 ) );</code></pre></div></section><section><h2 id="events"><span aria-hidden="true">⚡️</span>&nbsp;Events</h2><p>AutoComplete comes with several events triggered after actions that you can easily capture.</p><div class="table"><table><thead><tr><th>Name</th><th>Argument</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><span class="prop-name">onOpen</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the menu was opened.</td></tr><tr><td><span class="prop-name">onClose</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the menu was closes.</td></tr><tr><td><span class="prop-name">onResize</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the menu is resized.</td></tr><tr><td><span class="prop-name">onSearch</span></td><td><span class="prop-default"><code>value</code></span></td><td><span class="prop-type">{string}</span></td><td>Triggered before a search is performed.</td></tr><tr><td><span class="prop-name">onAbort</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered when a search is aborted (async).</td></tr><tr><td><span class="prop-name">onClear</span></td><td><span class="prop-default">-</span></td><td><span class="prop-type">-</span></td><td>Triggered after the input has been cleared.</td></tr><tr><td><span class="prop-name">onSelect</span></td><td><span class="prop-default"><code>item</code></span></td><td><span class="prop-type">{Object}</span></td><td>Triggered after a suggestion has been selected.</td></tr><tr><td><span class="prop-name">onHighlight</span></td><td><span class="prop-default"><code>item</code></span></td><td><span class="prop-type">{object}</span></td><td>Triggered after a suggestion has been highlighted.</td></tr></tbody></table></div><h3 id="events-logger">Events Logger</h3><label for="events-example" class="input-label"><span aria-hidden="true">👇</span> Example</label> <code class="events-logger"><span class="log-event">### Events Logger ###&NewLine;</span></code><div class="input-wrapper"><input type="text" id="events-example" placeholder="Type to see events log"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">new AutoComplete(
 	input,
 	{
 		source: [ /* ... */ ],
-		onOpen: () => console.log( 'menu opened' ),
-		onClose: () => console.log( 'menu closed' ),
-		onResize: () => console.log( 'menu resized' ),
-		onSearch: value => console.log( &#96;search for "&#36;{ value }"&#96; ),
-		onAbort: () => console.log( 'search aborted' ),
-		onClear: () => console.log( 'input cleared' ),
-		onSelect: item => console.log( &#96;"&#36;{ item.label }" selected&#96; ),
-		onHighlight: item => console.log( &#96;"&#36;{ item.label }" highlighted&#96; ),
+		onOpen: () =&gt; console.log( &#39;menu opened&#39; ),
+		onClose: () =&gt; console.log( &#39;menu closed&#39; ),
+		onResize: () =&gt; console.log( &#39;menu resized&#39; ),
+		onSearch: value =&gt; console.log( `search for &#34;${ value }&#34;` ),
+		onAbort: () =&gt; console.log( &#39;search aborted&#39; ),
+		onClear: () =&gt; console.log( &#39;input cleared&#39; ),
+		onSelect: item =&gt; console.log( `&#34;${ item.label }&#34; selected` ),
+		onHighlight: item =&gt; console.log( `&#34;${ item.label }&#34; highlighted` ),
 	}
 );</code></pre></div></section><section><h2 id="extras"><span aria-hidden="true">🎉</span>&nbsp;Extras</h2><p>AutoComplete comes with several public methods and events that allow to go a step beyond depending of your needs. In the following examples, we will change the default behaviour of a search.</p><h3 id="multiple-values">Multiple values</h3><p><code>source</code> option allows to control the searched suggestions from the input value. So, if we split the <code>value</code> argument passed in <code>source</code> function and pass it to <code>response()</code> method, it will automatically make a new search from last splitted value.</p><p>In this example, we use internal method <code>response( value, suggestions )</code>, that accepts as first argument the searched <code>value</code> and as second argument the <code>suggestions</code> in which to search.</p><p>In <code>source</code> function (and all events), instance context is binded (<code>this</code>). So, you should not use arrow function if you want to keep instance context.</p><label for="multi-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="multi-example" placeholder="Enter a country name"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">new AutoComplete(
 	input,
@@ -299,28 +299,28 @@ moveDown.addEventListener( 'click', () => instance.highlight( instance.index + 1
 		onSelect: function( { label } ) {
 
 			this.values.push( label );
-			input.value = &#96;&#36;{ this.values.filter( Boolean ).join( ', ' ) }, &#96;;
+			input.value = `${ this.values.filter( Boolean ).join( &#39;, &#39; ) }, `;
 
 		},
 	}
-);</code></pre></div><h3 id="dynamic-values">Dynamic values</h3><p>In this example, the <code>source</code> is dynamic and it passes in <code>response</code> callback suggestion based on user input (<code>value</code>). We also render the suggestion as shown in <code>renderItem</code> (<a href="#renderItem">@see example</a>)</p><label for="dynamic-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="dynamic-example" placeholder="Enter an hex color"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const colorSwatch = document.createElement( 'span' );
+);</code></pre></div><h3 id="dynamic-values">Dynamic values</h3><p>In this example, the <code>source</code> is dynamic and it passes in <code>response</code> callback suggestion based on user input (<code>value</code>). We also render the suggestion as shown in <code>renderItem</code> (<a href="#renderItem">@see example</a>)</p><label for="dynamic-example" class="input-label"><span aria-hidden="true">👇</span> Example</label><div class="input-wrapper"><input type="text" id="dynamic-example" placeholder="Enter an hex color"> <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M18.932 16.845a10.206 10.206 0 0 0 2.087-6.261A10.5 10.5 0 0 0 10.584 0a10.584 10.584 0 0 0 0 21.168 9.9 9.9 0 0 0 6.261-2.087l4.472 4.472a1.441 1.441 0 0 0 2.087 0 1.441 1.441 0 0 0 0-2.087zm-8.348 1.193a7.508 7.508 0 0 1-7.6-7.453 7.6 7.6 0 0 1 15.2 0 7.508 7.508 0 0 1-7.6 7.452z"></path></svg></div><div class="code-wrapper"><pre class="line-numbers"><code class="language-js">const colorSwatch = document.createElement( &#39;span&#39; );
 
 new AutoComplete(
 	input,
 	{
-		source: ( value, response ) => {
+		source: ( value, response ) =&gt; {
 
 			const isHex = /^#([0-9A-F]{3}){1,2}$/i.test( value );
 			response( isHex ? [ value ] : [] );
 
 		},
-		renderItem: ( suggestion, item ) => {
+		renderItem: ( suggestion, item ) =&gt; {
 
-			item.style.setProperty( '--color', suggestion.value );
+			item.style.setProperty( &#39;--color&#39;, suggestion.value );
 			item.append( colorSwatch.cloneNode() );
 
 			return suggestion.content;
 
 		},
 	}
-);</code></pre></div></section></main><footer id="site-footer"><p>✏️ <em>Handcrafted by <a href="https://twitter.com/LoicBlascos">Loïc Blascos</a></em></p></footer><script src="./dist/js/docs.js"></script></body></html>
+);</code></pre></div></section></main><footer id="site-footer"><p>✏️ <em>Handcrafted by <a href="https://twitter.com/LoicBlascos">Loïc Blascos</a></em></p></footer></body></html>

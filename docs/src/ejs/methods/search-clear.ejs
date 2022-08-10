@@ -1,10 +1,24 @@
 <h3 id="search-clear">search() / clear()</h3>
 <p><code>search()</code> method accepts as argument a string to programmatically trigger a search from a string. It allows to search in suggestions and to open menu if there are results. You can also use <code>clear()</code> method to clear a search (clear input value and close menu).</p>
 
-<%= require('../components/input.ejs')( { id: 'search-clear-example', label: 'Example', placeholder: 'Enter a country name', buttons: { search: 'Search', clear: 'Clear' } } ) %>
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'search-clear-example',
+		label: 'Example',
+		placeholder: 'Enter a country name',
+		buttons: {
+			search: 'Search',
+			clear: 'Clear'
+		}
+	}
+)
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -22,4 +36,4 @@ search.addEventListener( 'click', () => {
 clear.addEventListener( 'click', () => instance.clear() );`
 	}
 )
-%>
+-%>

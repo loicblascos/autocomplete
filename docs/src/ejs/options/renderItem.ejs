@@ -2,10 +2,20 @@
 <p>By default, suggestions output string in list item and cannot output HTML for performance and security reasons (XSS vulnerability from remote source for example). However, you can control the rendered content in each list item thanks to this option.</p>
 <p><code>renderItem</code> option accepts a function with as arguments the suggestion (from source) and the item element from the list. The function should return an HTMLelement or string to append in the list item. By returning <code>null</code> it will skip the item from the list.</p>
 
-<%= require('../components/input.ejs')( { id: 'renderitem-example', label: 'Example', placeholder: 'Enter a color name' } ) %>
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'renderitem-example',
+		label: 'Example',
+		placeholder: 'Enter a color name'
+	}
+)
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -44,10 +54,11 @@ new AutoComplete(
 );`
 	}
 )
-%>
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'css',
 		content:
@@ -68,4 +79,4 @@ require( '../components/code.ejs' )(
 }`
 	}
 )
-%>
+-%>

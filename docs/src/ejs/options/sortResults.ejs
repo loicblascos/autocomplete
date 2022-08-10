@@ -1,8 +1,9 @@
 <h3 id="sortResults">sortResults</h3>
 <p>By default, suggestions are sorted by relevance. It means that suggestions are firstly ordered by matched string position, then alphabetically and by suggestion length. If you do not want to sort results you can simply set this option to <code>false</code>.</p>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -23,4 +24,4 @@ require( '../components/code.ejs' )(
 );`
 	}
 )
-%>
+-%>

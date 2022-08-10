@@ -1,11 +1,26 @@
 <h3 id="select-highlight">select() / highlight()</h3>
 <p><code>select()</code> and <code>highlight()</code> methods accept as argument a number to programmatically select or highlight a suggestion from an index.</p>
 
-<%= require('../components/input.ejs')( { id: 'select-highlight-example', placeholder: 'Use Up and Down to choose suggestions', label: 'Example', buttons: { select: 'Select', moveup: 'Up', movedown: 'Down' } } ) %>
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'select-highlight-example',
+		placeholder: 'Use Up and Down to choose suggestions',
+		label: 'Example',
+		buttons: {
+			select: 'Select',
+			moveup: 'Up',
+			movedown: 'Down'
+		}
+	}
+)
+-%>
 <div class="menu-target"></div>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
     {
         language: 'js',
         content:
@@ -41,4 +56,4 @@ moveUp.addEventListener( 'click', () => instance.highlight( instance.index - 1 )
 moveDown.addEventListener( 'click', () => instance.highlight( instance.index + 1 ) );`
     }
 )
-%>
+-%>

@@ -9,20 +9,18 @@
 		<meta name="description" content="A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies.">
 		<title>AutoComplete</title>
 		<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2280%22%3E📖%3C/text%3E%3C/svg%3E">
-		<link rel="stylesheet" href="./dist/css/docs.css">
 	</head>
 	<body data-color="basic">
-		<header id="site-header"><%= require( './layout/header.ejs' )() %></header>
-		<nav id="site-nav"><%= require( './layout/menu.ejs' )() %></nav>
+		<header id="site-header"><%- include( './layout/header.ejs' ) -%></header>
+		<nav id="site-nav"><%- include( './layout/menu.ejs' ) -%></nav>
 		<main id="site-main">
-			<section><%= require( './layout/banner.ejs' )() %></section>
-			<section><%= require( './started/index.ejs' )() %></section>
-			<section><%= require( './options/index.ejs' )() %></section>
-			<section><%= require( './methods/index.ejs' )() %></section>
-			<section><%= require( './events/index.ejs' )() %></section>
-			<section><%= require( './extras/index.ejs' )() %></section>
+			<section><%- include( './layout/banner.ejs' ) -%></section>
+			<section><%- include( './started/index.ejs' ) -%></section>
+			<section><%- include( './options/index.ejs' ) -%></section>
+			<section><%- include( './methods/index.ejs' ) -%></section>
+			<section><%- include( './events/index.ejs' ) -%></section>
+			<section><%- include( './extras/index.ejs' ) -%></section>
 		</main>
-		<footer id="site-footer"><%= require( './layout/footer.ejs' )() %></footer>
-		<script src="./dist/js/docs.js"></script>
+		<footer id="site-footer"><%- include( './layout/footer.ejs' ) -%></footer>
 	</body>
 </html>

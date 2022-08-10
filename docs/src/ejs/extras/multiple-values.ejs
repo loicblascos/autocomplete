@@ -3,10 +3,20 @@
 <p>In this example, we use internal method <code>response( value, suggestions )</code>, that accepts as first argument the searched <code>value</code> and as second argument the <code>suggestions</code> in which to search.</p>
 <p>In <code>source</code> function (and all events), instance context is binded (<code>this</code>). So, you should not use arrow function if you want to keep instance context.</p>
 
-<%= require('../components/input.ejs')( { id: 'multi-example', label: 'Example', placeholder: 'Enter a country name' } ) %>
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'multi-example',
+		label: 'Example',
+		placeholder: 'Enter a country name'
+	}
+)
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
     {
         language: 'js',
         content:
@@ -23,12 +33,12 @@ require( '../components/code.ejs' )(
 		onSelect: function( { label } ) {
 
 			this.values.push( label );
-			input.value = &#96;&#36;{ this.values.filter( Boolean ).join( ', ' ) }, &#96;;
+			input.value = \`\${ this.values.filter( Boolean ).join( ', ' ) }, \`;
 
 		},
 	}
 );`
     }
 )
-%>
+-%>
 

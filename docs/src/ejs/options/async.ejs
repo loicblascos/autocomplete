@@ -1,9 +1,20 @@
 <p>When using array of objects, you can pass other properties and use them in the option <code><a href="#renderItem">renderItem</a></code>. It can be useful to create custom markup with custom content that should not be directly searched.</p>
 <p>If you need to make some data preprocessing or make asynchronous request to output suggestions, you can use a function and call the response callback passed as argument:</p>
 
-<%= require('../components/input.ejs')( { id: 'async-example', label: 'Asynchronous example', placeholder: 'Enter a Github repository name' } ) %>
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'async-example',
+		label: 'Asynchronous example',
+		placeholder: 'Enter a Github repository name'
+	}
+)
+-%>
+
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -18,7 +29,7 @@ require( '../components/code.ejs' )(
 		 */
 		source: function( value, response ) {
 
-			fetch( &#96;https://api.github.com/search/repositories?q=&#36;{value}&#96; )
+			fetch( \`https://api.github.com/search/repositories?q=\${value}\` )
 			.then( obj => obj.json() )
 			.then( data => {
 
@@ -33,4 +44,4 @@ require( '../components/code.ejs' )(
 );`
 	}
 )
-%>
+-%>

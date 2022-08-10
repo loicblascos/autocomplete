@@ -1,10 +1,25 @@
 <h3 id="enable-disable">enable() / disable()</h3>
 <p>While it's possible to directly disable/enable the input with <code>disabled</code> attribute, these methods will handle other aspects like closing the menu or updating clear button.</p>
 
-<%= require('../components/input.ejs')( { id: 'enable-disable-example', label: 'Example', value: 'France', placeholder: 'Enter a country name', buttons: { enable: 'Enable', disable: 'Disable' } } ) %>
+<%-
+include(
+	'../components/input.ejs',
+	{
+		id: 'enable-disable-example',
+		label: 'Example',
+		value: 'France',
+		placeholder: 'Enter a country name',
+		buttons: {
+			enable: 'Enable',
+			disable: 'Disable'
+		}
+	}
+)
+-%>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -16,4 +31,4 @@ enable.addEventListener( 'click', () => instance.enable() );
 disable.addEventListener( 'click', () => instance.disable() );`
 	}
 )
-%>
+-%>

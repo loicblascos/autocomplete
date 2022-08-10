@@ -1,6 +1,15 @@
 <div class="site-banner">
 	<h2>A flexible, accessible, customizable and efficient autocomplete input control with zero dependencies.</h2>
-	<%= require('../components/input.ejs')( { id: 'main-example', label: 'Try it out', placeholder: 'Enter a country name' } ) %>
+	<%-
+	include(
+		'../components/input.ejs',
+		{
+			id: 'main-example',
+			label: 'Try it out',
+			placeholder: 'Enter a country name'
+		}
+	)
+	-%>
 	<div id="option-controls" class="checkbox-group">
 		<label for="opt-smartaccent">
 			<input type="checkbox" id="opt-smartaccent" name="smartAccent" checked>

@@ -1,8 +1,9 @@
 <h3 id="filterResults">filterResults</h3>
 <p>By default, results from suggestions are filtered by the label. You can use this option to add extra logic to match searched value in suggestions.</p>
 
-<%=
-require( '../components/code.ejs' )(
+<%-
+include(
+	'../components/code.ejs',
 	{
 		language: 'js',
 		content:
@@ -31,4 +32,4 @@ new AutoComplete(
 );`
 	}
 )
-%>
+-%>
