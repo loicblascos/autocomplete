@@ -45,7 +45,7 @@
 		"stylelint-config-standard": "^26.0.0",
 		"template-ejs-loader": "^0.9.4",
 		"terser-webpack-plugin": "^5.3.3",
-		"webpack": "5.74.0",
+		"webpack": "5.76.0",
 		"webpack-cli": "^4.10.0"
 	},
 	"dependencies": {
