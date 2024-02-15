@@ -98,6 +98,10 @@ export default class AutoComplete extends Events {
 	 */
 	enable() {
 
+		if ( ! this.element.disabled ) {
+			return;
+		}
+
 		this.element.disabled = false;
 
 		this.update();
@@ -108,6 +112,10 @@ export default class AutoComplete extends Events {
 	 * Disable autocomplete input
 	 */
 	disable() {
+
+		if ( this.element.disabled ) {
+			return;
+		}
 
 		this.element.disabled = true;
 
